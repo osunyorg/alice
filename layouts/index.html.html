@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "fr" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "head/css.html" }}
+    {{ partial "head/seo.html" . }}
+    {{ partial "head/favicons.html" . }}
+    {{ partial "head/rss.html" . }}
+    {{ partial "head/script.html" . }}
+    {{ partial "head/extras.html" . }}
+  </head>
+  <body class="{{ partial "GetBodyclass" . }}">
+    <main{{ if .Params.contents }} class="page-with-blocks"{{ end }} id="main" tabindex="-1">
+      <section id="home" class="screen">
+        <img src="/assets/images/alice.png" alt="Alice">
+        <h1>Alice au pays des cryptos</h1>
+        <p class="h2">Une plongée sociologique, ludique et gratuite</p>
+        <p>
+          Le monde des cryptos & des NFTs peut être à la fois dense et superficiel, transparent et opaque, technique et mystique. 
+          Afin de guider les visiteurs et les curieux, 
+          Etienne Mineur (<a href="https://volumique.com" target="_blank">Volumique</a>) et 
+          Arnaud Levy (<a href="https://www.noesya.coop" target="_blank">noesya</a>) proposent un voyage critique parmi ses lieux communs, ses îlots stéréotypés et ses montagnes technologiques. 
+          Attention, malgré sa grande mignonitude, cette petite expérience n'est pas du tout pour les enfants (#cookiejar).
+        </p>
+        <a href="#game" class="button">Jouer</a>
+        <p class="credits">
+          Cette expérience interactive a été conçue par Etienne et Arnaud.
+          La direction artistique et la production graphique sont l'œuvre d'Etienne, avec l'aide de Perrine Joly.
+          Les images ont été créées avec l’outil Midjourney.
+          Le code JavaScript a été écrit par Alexis Benoit et l'intégration HTML a été faite par Cléo Laffargue.
+          Les textes sont d'Arnaud Levy, à l'exception des phrases des crypto-trolls, qui sont toutes de vraies phrases, collectées sur Twitter et LinkedIn.
+          Respect et gratitude à Aurore Lalucq, qui a subi ces insultes lamentables en travaillant pour l'intérêt général.
+        </p>
+      </section>
+      <div class="screen game" id="game">
+        <div class="definitions">
+          <ul>
+            {{ range site.Data.definitions }}
+              <li class="popin" id="{{ urlize .title }}">
+                <article class="definition">
+                  <h2>{{ .title }}</h2>
+                  {{ safeHTML .content  }}
+                  <a class="close">&times;</a>
+                </article>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+    
+        <div class="cities">
+          <ul>
+            {{ with site.GetPage "/pages/villes" }}
+              {{ range .Pages }}
+                <li class="popin popin--offcanvas" id="{{ .Params.slug }}">
+                  <div class="city">
+                    {{ partial "commons/image.html"
+                      (dict
+                        "image"    .Params.image
+                        "sizes"    site.Params.image_sizes.design_system.hero
+                        "lazy"     false
+                      ) }}
+                    <div class="content">
+                      <h2 class="h1">{{ .Title }}</h2>
+                      {{ partial "blocks/list" . }}
+                    </div>
+                    <a class="close">&times;</a>
+                  </div>
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+    
+        <div class="game-ui">
+          <div class="coins"></div>
+          <div class="controls">
+            <button data-action="left"><img class="arrow" src=/assets/images/arrows/gauche.svg></button>
+            <button data-action="up"><img class="arrow" src=/assets/images/arrows/haut.svg></button>
+            <button data-action="down"><img class="arrow" src=/assets/images/arrows/bas.svg></button>
+            <button data-action="right"><img class="arrow" src=/assets/images/arrows/droite.svg></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    {{- partial "footer/plausible.html" . -}}
+    {{- partial "footer/js.html" . -}}
+    {{- partial "footer/script.html" . -}}
+    {{- if not hugo.IsProduction -}}
+      {{- partial "footer/debug.html" . -}}
+    {{- end -}}
+  </body>
+</html>

@@ -2,7 +2,8 @@
 
 export const CITIES = [
     {
-        id: 'kryptogarten',
+        id: 'bankochain',
+        // id: 'kryptogarten',
         src: '/assets/images/cities/kryptogarten.png',
         x: 60,
         y: 680,
@@ -10,7 +11,8 @@ export const CITIES = [
         srcHeight: 389,
     },
     {
-        id: 'crypto-university',
+        id: 'bankochain',
+        // id: 'crypto-university',
         src: '/assets/images/cities/crypto-university.png',
         x: 1440,
         y: 460,
@@ -18,7 +20,8 @@ export const CITIES = [
         srcHeight: 349,
     },
     {
-        id: 'la-mine-de-blocs',
+        id: 'bankochain',
+        // id: 'la-mine-de-blocs',
         src: '/assets/images/cities/mine-de-bloc.png',
         x: 1300,
         y: 150,
@@ -26,7 +29,8 @@ export const CITIES = [
         srcHeight: 416,
     },
     {
-        id: 'kryptogarten',
+        id: 'bankochain',
+        // id: 'kryptogarten',
         name: 'Eglise de la sainte crypto',
         src: '/assets/images/cities/eglise-sainte-crypto.png',
         x: 500,
@@ -35,7 +39,8 @@ export const CITIES = [
         srcHeight: 429,
     },
     {
-        id: 'libertaria',
+        id: 'bankochain',
+        // id: 'libertaria',
         src: '/assets/images/cities/libertaria.png',
         x: 2140,
         y: 450,
@@ -43,7 +48,8 @@ export const CITIES = [
         srcHeight: 459,
     },
     {
-        id: 'le-dome-du-tonnerre',
+        id: 'bankochain',
+        // id: 'le-dome-du-tonnerre',
         src: '/assets/images/cities/dome-tonnerre.png',
         x: 2050,
         y: 200,
@@ -51,7 +57,8 @@ export const CITIES = [
         srcHeight: 387,
     },
     {
-        id: 'self-made-city',
+        id: 'bankochain',
+        // id: 'self-made-city',
         src: '/assets/images/cities/self-made-city.png',
         x: 350,
         y: 300,
@@ -60,6 +67,7 @@ export const CITIES = [
     },
     {
         id: 'bankochain',
+        // id: 'bankochain',
         src: '/assets/images/cities/bankochain.png',
         x: 1000,
         y: 600,
@@ -67,7 +75,8 @@ export const CITIES = [
         srcHeight: 383,
     },
     {
-        id: 'mordor-club',
+        id: 'bankochain',
+        // id: 'mordor-club',
         src: '/assets/images/cities/mordor-club.png',
         x: 2200,
         y: -100,
@@ -75,7 +84,8 @@ export const CITIES = [
         srcHeight: 401,
     },
     {
-        id: 'cimetiere-du-nft',
+        id: 'bankochain',
+        // id: 'cimetiere-du-nft',
         src: '/assets/images/cities/cimetiere-du-nft.png',
         x: 1600,
         y: 160,
