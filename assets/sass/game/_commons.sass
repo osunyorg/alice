@@ -1,0 +1,48 @@
+body
+    background: $blue-sea
+
+.screen
+    position: relative
+    min-height: 100vh
+    &:not(:target)
+        display: none
+
+img
+    display: block
+    max-width: 100%
+
+.close 
+    cursor: pointer
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 40px
+    height: 40px
+    border: 1px solid black
+    border-radius: 50%
+    transition: all 200ms
+    font-size: px2rem(30)
+    text-decoration: none
+    text-align: center
+
+.popin
+    @include popin
+    &--offcanvas
+        background: white
+        &.is-opened
+            display: block
+        @include media-breakpoint-down($md)
+            display: none
+            &.is-opened
+                display: block
+        @include media-breakpoint-up($md)
+            display: block
+            max-width: 600px
+            width: 60%
+            top: 0
+            bottom: 0
+            left: auto
+            right: 0
+            transform: translateX(100%)
+            &.is-opened
+                transform: translateX(0)

@@ -1,0 +1,154 @@
+@keyframes sea
+  0%
+    background-position: 0 0
+  50%
+    background-position: 30px -20px
+  100%
+    background-position: 60px 0
+
+.game-container
+  position: fixed
+  inset: 0
+
+#game
+  display: block
+  position: fixed
+  inset: 0
+  background-image: url('/assets/images/sea/pattern-sea.png')
+  background-size: 30px
+  animation: 3s sea infinite
+  z-index: 1
+  &:not(:target)
+    opacity: 0
+    pointer-events: none
+  canvas, .popin--offcanvas
+    transition: 0.5s transform ease-in-out
+
+.game-dialog
+  background: black
+  color: white
+  display: none
+  left: 0
+  line-height: 130%
+  max-width: 300px
+  padding: 10px 15px 15px
+  position: fixed
+  top: 0
+  transform: translateX(-50%) translateY(-100%)
+  width: max-content
+  transition: opacity .3s
+  z-index: 2
+  p
+    font-size: px2rem(20)
+    font-weight: bold
+    margin: 0
+  small
+    font-size: px2rem(14)
+    text-align: right
+    display: block
+  &:not(.game-dialog--action)
+    transform: translateX(calc(-50% + 70px))  translateY(-100%)
+    min-width: 200px
+    &::after
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 10px 10px 0 0
+      border-color: black transparent transparent transparent
+      position: absolute
+      top: 100%
+      left: 30%
+  &--action
+    background: $orange
+    color: black
+    cursor: pointer
+    margin-left: 0
+    text-align: center
+    z-index: 3
+    &:hover
+      color: $orange
+      background: black
+    &::before
+      content: 'Visiter ↓'
+
+body.offcanvas-is-opened,
+body.offcanvas-is-closing
+  .game-dialog
+    transition-duration: 0.1s
+    transition-timing-function: ease-in-out
+    opacity: 0
+
+body.offcanvas-is-opened
+  @include media-breakpoint-up($md)
+    #game
+      canvas
+        transform: translateX(-250px)
+
+.game-ui
+  position: fixed
+  inset: 30px
+  z-index: 5
+
+.coins
+  display: flex
+  position: absolute
+  top: 0
+  left: 0
+  gap: 3px
+  .coin
+    cursor: pointer
+    width: 30px
+    height: 30px
+    background-image: url('/assets/images/coin/flat-coin.png')
+    background-size: contain
+    p
+      background: black
+      color: white
+      font-size: px2rem(14)
+      padding: px2rem(5) px2rem(10)
+      position: absolute
+      top: 100%
+      margin-top: 10px
+      white-space: nowrap
+      opacity: 0
+      transition: .23s
+      transform: translateY(10px)
+      &::after
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 10px 6px
+        border-color: transparent transparent black transparent
+        position: absolute
+        bottom: 100%
+        left: 9px
+    &:hover p
+      opacity: 1
+      transform: translateY(0)
+
+.controls
+  position: absolute
+  bottom: 0
+  left: 0
+  user-select: none
+  button
+    -webkit-appearance: none
+    user-select: none
+    box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.25)
+    background: #5C4638
+    border-radius: 10px
+    border: none
+    color: #F6E3AD
+    padding: 5px
+    @include media-breakpoint-down ($sm)
+      text-align: center
+      padding: 5px
+    .arrow
+      height: 44px
+      width: 44px
+  button:active
+    transform: translateY(5px)
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25)
+  
