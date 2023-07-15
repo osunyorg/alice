@@ -13,9 +13,15 @@
   <body class="{{ partial "GetBodyclass" . }}">
     <main{{ if .Params.contents }} class="page-with-blocks"{{ end }} id="main" tabindex="-1">
       <section id="home" class="screen">
-        <img src="/assets/images/alice.png" alt="Alice">
-        <h1>Alice au pays des cryptos</h1>
-        <p class="h2">Une plongée sociologique, ludique et gratuite</p>
+        {{ partial "commons/image.html"
+          (dict
+            "image"    .Params.image
+            "sizes"    site.Params.image_sizes.design_system.hero
+            "lazy"     false
+          ) }}
+        {{/*  <img src="/assets/images/alice.png" alt="Alice">  */}}
+        <h1>{{ .Title }}</h1>
+        <p class="h2">{{ partial "PrepareText" .Params.summary }}</p>
         <p>
           Le monde des cryptos & des NFTs peut être à la fois dense et superficiel, transparent et opaque, technique et mystique. 
           Afin de guider les visiteurs et les curieux, 
@@ -35,17 +41,23 @@
       </section>
       <div class="screen game" id="game">
         <div class="definitions">
-          <ul>
-            {{ range site.Data.definitions }}
-              <li class="popin" id="{{ urlize .title }}">
-                <article class="definition">
-                  <h2>{{ .title }}</h2>
-                  {{ safeHTML .content  }}
-                  <a class="close">&times;</a>
-                </article>
-              </li>
-            {{ end }}
-          </ul>
+          {{ with site.GetPage "/pages/definitions" }}
+            <ul>
+              {{ range .Params.contents }}
+                {{ if eq .template "chapter" }}
+                  <li class="popin" id="{{ urlize .title }}">
+                    <article class="definition">
+                      <h2>{{ .title }}</h2>
+                      {{ with .data}}
+                        {{ safeHTML .text  }}
+                      {{ end }}
+                      <a class="close">&times;</a>
+                    </article>
+                  </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+          {{ end }}
         </div>
     
         <div class="cities">
