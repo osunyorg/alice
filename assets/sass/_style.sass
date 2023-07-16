@@ -1,0 +1,32 @@
+h1, .h1
+    color: $color-accent
+    font-style: normal
+
+h2, .h2, h3, .h3
+    font-style: italic
+    font-weight: normal
+
+.button
+    font-size: px2rem(26)
+    text-decoration: none
+    padding: px2rem(12) px2rem(32)
+    background: $orange
+
+blockquote
+    font-style: italic
+    font-size: px2rem(32)
+    padding: px2rem(40) 0 
+    position: relative
+    &::after,
+    &::before
+        font-size: px2rem(80)
+        line-height: px2rem(80)
+        // font-style: italic
+        display: block
+        position: absolute
+    &::after,
+        content: "”"
+        bottom: -px2rem(48)
+    &::before
+        content: "“"
+        top: 0
