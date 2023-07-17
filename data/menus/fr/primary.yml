@@ -57,6 +57,10 @@ items:
     target: "/villes/mordor-club/"
     kind: page
     children: []
+  - title: Self-made city
+    target: "/villes/self-made-city/"
+    kind: page
+    children: []
 - title: Définitions
   target: "/definitions/"
   kind: page
