@@ -1,4 +1,4 @@
-export class UIPopin {
+export class Popin {
   constructor(element) {
     this.element = element;
     this.isOpened = false;

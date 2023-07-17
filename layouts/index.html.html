@@ -47,7 +47,7 @@
                 {{ if eq .template "chapter" }}
                   <li class="popin" id="{{ urlize .title }}">
                     <article class="definition">
-                      <h2>{{ .title }}</h2>
+                      <h2 class="h1">{{ .title }}</h2>
                       {{ with .data}}
                         {{ safeHTML .text  }}
                       {{ end }}

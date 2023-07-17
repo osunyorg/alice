@@ -1,4 +1,4 @@
-import { UIPopin } from "./ui/UIPopin";
+import { Popin } from "./ui/Popin";
 
 class UI {
   constructor() {
@@ -6,7 +6,7 @@ class UI {
   }
   setup() {
     document.querySelectorAll('.popin').forEach(element => {
-      this.popins[element.id] = new UIPopin(element);
+      this.popins[element.id] = new Popin(element);
     });
     this.coinsContainer = document.querySelector('.coins');
   }
