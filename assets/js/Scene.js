@@ -26,7 +26,6 @@ export default class Scene {
     this.elements = [
       ...this.cities, 
       ...this.trolls,
-      ...this.coins, 
       this.hero
     ]
   }
@@ -75,6 +74,7 @@ export default class Scene {
   }
   update() {
     this.map.update();
+    this.coins.forEach(coin => coin.update());
     this.elements.sort((a, b) => (a.y + a.depthOffset) - (b.y + b.depthOffset))
     this.elements.forEach(element => element.update());
     this.checkCollision();

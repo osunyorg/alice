@@ -1,6 +1,6 @@
 import { TROLLS } from "js/data/trolls";
 import Character from "./Character";
-import { game } from "js/Game";
+import { WORLD } from "js/data/world";
 
 const ACTIONS = ["idle", "idle", "idle", "left", "right", "up", "down"];
 export default class Troll extends Character {
@@ -8,8 +8,8 @@ export default class Troll extends Character {
     super({
       x: x,
       y: y,
-      width: 128,
-      height: 150,
+      width: 128 * WORLD.characters.scale,
+      height: 150 * WORLD.characters.scale,
       srcWidth: 256,
       srcHeight: 300,
       src: src,

@@ -1,6 +1,12 @@
 export const WORLD = {
   width: 2500,
   height: 1016,
+  characters: {
+    scale: 0.8
+  },
+  cities: {
+    scale: 0.4
+  },
   area: {
     left: 0,
     top: -100,

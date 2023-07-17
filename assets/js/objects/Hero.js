@@ -1,13 +1,14 @@
 import Controls from "js/Controls";
 import Character from "./Character"
+import { WORLD } from "js/data/world";
 import 'js/utils/lerp';
 export default class Hero extends Character {
   constructor({x = 0, y = 0}) {
     super({
       x,
       y,
-      width: 128,
-      height: 150,
+      width: 128 * WORLD.characters.scale,
+      height: 150 * WORLD.characters.scale,
       srcWidth: 256,
       srcHeight: 300,
       src: '/assets/webp/characters/alice.webp',

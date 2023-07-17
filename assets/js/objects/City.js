@@ -1,3 +1,4 @@
+import { WORLD } from "js/data/world";
 import SpeakingThing from "./SpeakingThing";
 import UI from "js/UI";
 
@@ -10,9 +11,8 @@ export default class City extends SpeakingThing {
       y: 25
     }
 
-    const scale = 0.35;
-    data.width = data.srcWidth * scale;
-    data.height = data.srcHeight * scale;
+    data.width = data.srcWidth * WORLD.cities.scale;
+    data.height = data.srcHeight * WORLD.cities.scale;
 
     super(data);
 
