@@ -1,6 +1,8 @@
 .city
     background-color: $color-background
-    padding: $grid-gutter
+    padding: half($grid-gutter-sm)
+    @include media-breakpoint-up(md)
+        padding: $grid-gutter
     .content > *
         margin-top: $spacing1
         margin-bottom: $spacing1

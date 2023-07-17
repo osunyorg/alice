@@ -1,22 +1,18 @@
 .definition
     color: white
     background: black
-    padding: px2rem(50)
+    padding: $spacing1 $spacing2
     position: relative
     max-height: 70vh
     overflow-y: auto
+    @include small
+    a
+        color: inherit
     .close
-        border: 1px solid white
+        // border: 1px solid white
+        top: 0
+        right: 0
+        color: white
     h2
-        font-size: px2rem(50)
-        text-align: center
-        margin-bottom: $spacing1
-        &::before
-            content: ''
-            display: block
-            background-image: url(/assets/images/coin/coin.png)
-            background-size: 100% 100%
-            width: 64px
-            height: 64px
-            margin: auto
-            transform: rotate(25deg)
+        font-size: px2rem(30)
+        margin-bottom: $spacing0

@@ -1,3 +1,5 @@
+import { game } from "./Game";
+
 export default class Controls {
   constructor() {
 
@@ -10,6 +12,7 @@ export default class Controls {
 
     this.bindKeyboard();
     this.bindButtons();
+    this.bindMoveClick();
   }
   bindKeyboard() {
     window.addEventListener('keydown', e => {
@@ -61,6 +64,15 @@ export default class Controls {
         this.actions[action] = false;
       })
     })
+  }
+  bindMoveClick() {
+    let x, y;
+    game.canvas.addEventListener('click', (e) => {
+      console.log(e)
+      x = e.offsetX - game.camera.x;
+      y = e.offsetY - game.camera.y;
+      game.scene.hero.goTo(x, y)
+    });
   }
 }
 

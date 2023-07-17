@@ -46,7 +46,7 @@
                       {{ with .data}}
                         {{ safeHTML .text  }}
                       {{ end }}
-                      <a class="close">&times;</a>
+                      <a class="close"></a>
                     </article>
                   </li>
                 {{ end }}
@@ -72,7 +72,7 @@
                       <h3>{{ .Params.summary }}</h3>
                       {{ partial "blocks/list" . }}
                     </div>
-                    <a class="close">&times;</a>
+                    <a class="close"></a>
                   </div>
                 </li>
               {{ end }}

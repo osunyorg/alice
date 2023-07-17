@@ -9,22 +9,46 @@
     position: absolute
     top: 20px
     right: 20px
-    width: 40px
-    height: 40px
-    border: 1px solid black
     border-radius: 50%
     transition: all 200ms
-    font-size: px2rem(30)
     text-decoration: none
     text-align: center
+    @include icon-block('close')
 
 .popin
-    @include popin
+    display: none
+    position: absolute
+    left: 30px
+    right: 30px
+    bottom: 30px
+    margin: 0 auto
+    justify-content: center
+    flex-direction: column
+    z-index: 10
+    &.is-opened
+        display: flex
+        max-width: 600px
+    &:not(.popin--offcanvas)
+        &::before
+            content: ''
+            display: block
+            background-image: url(/assets/images/coin/coin.png)
+            background-size: 100% 100%
+            width: 64px
+            height: 64px
+            position: absolute
+            top: 0
+            left: 0
+            transform: rotate(25deg) translate(-30px, -20px)
+            z-index: 4
     &--offcanvas
         background: white
+        overflow-y: auto
+        inset: 0px
         &.is-opened
             display: block
         @include media-breakpoint-down(desktop)
+            inset: 15px
             display: none
             &.is-opened
                 display: block
