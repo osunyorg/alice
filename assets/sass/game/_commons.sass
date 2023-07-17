@@ -24,11 +24,11 @@
         background: white
         &.is-opened
             display: block
-        @include media-breakpoint-down($md)
+        @include media-breakpoint-down(desktop)
             display: none
             &.is-opened
                 display: block
-        @include media-breakpoint-up($md)
+        @include media-breakpoint-up(desktop)
             display: block
             max-width: 600px
             width: 60%

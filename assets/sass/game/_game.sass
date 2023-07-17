@@ -83,7 +83,7 @@ body.offcanvas-is-closing
     opacity: 0
 
 body.offcanvas-is-opened
-  @include media-breakpoint-up($md)
+  @include media-breakpoint-up(desktop)
     #game
       canvas
         transform: translateX(-250px)
@@ -145,7 +145,7 @@ body.offcanvas-is-opened
     border: none
     color: #F6E3AD
     padding: 5px
-    @include media-breakpoint-down ($sm)
+    @include media-breakpoint-down (sm)
       text-align: center
       padding: 5px
     .arrow

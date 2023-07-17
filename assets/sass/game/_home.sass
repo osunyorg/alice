@@ -1,17 +1,16 @@
 #home
-    padding: px2rem(20) px2rem(20) px2rem(80)
-    background: $background-color
+    background: $color-background
     text-align: center
-    > p
-        max-width: 660px
-        margin-left: auto
-        margin-right: auto
+    padding: $grid-gutter 0
     img
         display: block
         height: 150px
         width: auto
-        margin: 100px auto 0 auto
-    .button
-        display: inline-block
-        margin-top: px2rem(50)
-        margin-bottom: px2rem(50)
+        margin: auto
+    a[href="#game"]
+        @include btn
+        background: $orange
+        margin: $spacing2 auto
+    .introduction
+        width: col(10)
+        margin: $spacing3 auto
