@@ -49,6 +49,10 @@ items:
     target: "/villes/le-dome-du-tonnerre/"
     kind: page
     children: []
+  - title: Libertaria
+    target: "/villes/libertaria/"
+    kind: page
+    children: []
 - title: Définitions
   target: "/definitions/"
   kind: page
