@@ -29,17 +29,20 @@
         display: flex
         max-width: 600px
     &:not(.popin--offcanvas)
+        @include media-breakpoint-down(desktop)
+            left: 0
+            right: 0
+            bottom: 0
         &::before
             content: ''
             display: block
             background-image: url(/assets/images/coin/coin.png)
             background-size: 100% 100%
-            width: 64px
-            height: 64px
+            width: 40px
+            height: 40px
             position: absolute
-            top: 0
-            left: 0
-            transform: rotate(25deg) translate(-30px, -20px)
+            top: -18px
+            left: 18px
             z-index: 4
     &--offcanvas
         background: white
