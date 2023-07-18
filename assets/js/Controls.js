@@ -68,7 +68,7 @@ export default class Controls {
   bindMoveClick() {
     let x, y;
     game.canvas.addEventListener('click', (e) => {
-      console.log(e)
+    //   console.log(e)
       x = e.offsetX - game.camera.x;
       y = e.offsetY - game.camera.y;
       game.scene.hero.goTo(x, y)

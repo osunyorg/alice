@@ -34,6 +34,10 @@ export default class Hero extends Character {
     this.direction = 1;
     this.collideTimeoutDuration = 1000;
     this.isWalking = false;
+    this.isWalkingToTarget = false;
+    this.audio1 = document.getElementById('sound-step-l');
+    this.audio2 = document.getElementById('sound-step-r');
+    this.currentAudio = this.audio1;
     this.positionTarget = {
       x: 0,
       y: 0,
@@ -61,13 +65,15 @@ export default class Hero extends Character {
       y = 1
     }
     if (x || y) {
-      this.isWalking = false;
+      this.isWalkingToTarget = false;
       this.setAnimation(x > 0 ? "walk" : "reversedWalk");
       x = this.x + x * this.speed;
       y = this.y + y * this.speed;
+      this.isWalking = true;
       this.move(x, y);
-    } else if (!this.isWalking) {
+    } else if (!this.isWalkingToTarget) {
       this.setAnimation("idle");
+      this.isWalking = false;
     }
   }
   goTo(x, y) {
@@ -80,13 +86,15 @@ export default class Hero extends Character {
     this.positionTarget.y = y;
     this.positionTarget.progression = 0;
     this.positionTarget.distance = Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));
+    this.isWalkingToTarget = true;
     this.isWalking = true;
-  }
+}
   walkToTarget() {
     let {x, y, startX, startY, distance } = this.positionTarget;
     this.positionTarget.progression += (1/distance * this.speed);
 
     if (this.positionTarget.progression >= 1) {
+      this.isWalkingToTarget = false;
       this.isWalking = false;
       this.setAnimation("idle");
       return;
@@ -99,15 +107,30 @@ export default class Hero extends Character {
     this.setAnimation(startX < x ? "walk" : "reversedWalk");
 
     if (!forward) {
+      this.isWalkingToTarget = false;
       this.isWalking = false;
     }
     
   }
+  makeSound() {
+    if (this.audio1.paused) {
+      if (this.currentAudio == this.audio1) {
+        this.currentAudio = this.audio2;
+    } else {
+        this.currentAudio = this.audio1;
+      }
+      this.currentAudio.play();
+    }
+  }
   update() {
     this.listenControls();
 
+    if (this.isWalkingToTarget) {
+      this.walkToTarget();
+    }
+
     if (this.isWalking) {
-      this.walkToTarget()
+      this.makeSound();
     }
 
     super.update();
