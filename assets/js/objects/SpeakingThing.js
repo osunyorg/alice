@@ -18,6 +18,9 @@ export default class SpeakingThing extends Thing {
     this.dialog.style.display = "block";
     this.isSpeaking = true;
     this.updateDialog();
+    // 1, 2 ou 3
+    let voice = Math.floor(Math.random() * 3) + 1;
+    document.getElementById('sound-troll-' + voice).play();
   }
   stopSpeaking() {
     this.dialog.style.display = "none";

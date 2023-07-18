@@ -33,7 +33,7 @@ export default class City extends SpeakingThing {
   }
 
   startCollide() {
-    UI.open(this.data.id); 
+    UI.visitCity(this.data.id);
   }
 
   stopCollide() {

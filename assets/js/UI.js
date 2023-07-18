@@ -19,6 +19,10 @@ class UI {
     this.closeAll();
     this.popins[id].open();
   }
+  visitCity(id) {
+    this.open(id); 
+    document.getElementById('sound-city').play();
+  }
   collectCoin(id) {
     const coin = document.createElement('div'),
       title = this.popins[id].element.querySelector('h2').innerText;
@@ -26,6 +30,7 @@ class UI {
     coin.innerHTML = `<p>${title}</p>`;
     this.coinsContainer.appendChild(coin);
     coin.addEventListener('click', this.open.bind(this, id));
+    document.getElementById('sound-coin').play();
   }
 }
 
