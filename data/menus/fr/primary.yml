@@ -21,7 +21,7 @@ items:
     target: "/villes/eglise-de-la-sainte-crypto/"
     kind: page
     children: []
-  - title: Kryptogarden
+  - title: Kryptogarten
     target: "/villes/kryptogarden/"
     kind: page
     children: []
