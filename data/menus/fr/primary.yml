@@ -9,7 +9,7 @@ items:
     target: "/villes/bankochain/"
     kind: page
     children: []
-  - title: Cimetière du NFT
+  - title: Cimetière du NFT
     target: "/villes/cimetiere-du-nft/"
     kind: page
     children: []
