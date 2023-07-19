@@ -52,7 +52,11 @@ items:
 - title: Équipe
   target: "/equipe/"
   kind: page
-  children: []
+  children:
+  - title: Équipe éditoriale
+    target: "/equipe/equipe-editoriale/"
+    kind: page
+    children: []
 - title: Organisations
   target: "/organisations/"
   kind: page
