@@ -33,4 +33,36 @@ items:
     target: "/villes/le-dome-du-tonnerre/"
     kind: page
     children: []
+  - title: Libertaria
+    target: "/villes/libertaria/"
+    kind: page
+    children: []
+  - title: Mordor Club
+    target: "/villes/mordor-club/"
+    kind: page
+    children: []
+  - title: Self-made city
+    target: "/villes/self-made-city/"
+    kind: page
+    children: []
+- title: Définitions
+  target: "/definitions/"
+  kind: page
+  children: []
+- title: Actualités
+  target: "/actualites/"
+  kind: page
+  children: []
+- title: Équipe
+  target: "/equipe/"
+  kind: page
+  children:
+  - title: Équipe éditoriale
+    target: "/equipe/equipe-editoriale/"
+    kind: page
+    children: []
+- title: Organisations
+  target: "/organisations/"
+  kind: page
+  children: []
 
