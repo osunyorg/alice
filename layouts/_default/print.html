@@ -13,11 +13,19 @@
     <script type="text/javascript" src="/assets/pagedjs/paged.polyfill.js"></script>
   </head>
   <body>
-    <h1>Alice au pays des cryptos</h1>
-    {{ with site.GetPage "/pages/lire" }}
-      {{ partial "contents/list.html" . }}
-    {{ end }}
-
-    <h2>4e de couv</h2>
+    <section class="cover">
+      <img src="/assets/images/print/alice.png">
+      <h1>Alice au pays des cryptos</h1>
+      <p>Etienne Mineur & Arnaud Levy </p>
+    </section>
+    <section class="blank"></section>
+    <section>
+      {{ with site.GetPage "/pages/lire" }}
+        {{ partial "contents/list.html" . }}
+      {{ end }}
+    </section>
+    <section>
+      <h2>4e de couv</h2>
+    </section>
   </body>
 </html>

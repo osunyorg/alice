@@ -1,2 +1,50 @@
 *
     font-family: 'Calvino', serif
+
+section,
+h2
+    break-before: page
+
+h1
+    font-size: 2em
+
+h2
+    font-size: 30pt
+    line-height: 30pt
+    margin-bottom: 10pt
+
+p
+    font-size: 10pt
+    line-height: 16pt
+
+i,
+.block-title
+    font-style: italic
+    font-size: 20pt
+    line-height: 20pt
+    margin: 0
+.block-chapter
+    img
+        margin-top: 30pt
+        width: 200pt
+
+p
+    a
+        text-decoration: none
+        color: black
+        &::after
+            content: " (" attr(href) ")"
+
+.cover
+    margin-top: 5em
+    text-align: center
+    h1
+        font-size: 60pt
+        line-height: 50pt
+        margin: 0
+    p
+        margin-top: 2em
+        font-style: italic
+        font-size: 1.3em
+    img
+        width: 10em
