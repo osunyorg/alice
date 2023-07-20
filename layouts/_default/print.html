@@ -2,14 +2,22 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <title>{{ .Title }}</title>
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/pagedjs.css" />
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/interface.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/pagedjs/print.css" />
+    {{ $styles := resources.Get "sass/print.sass" | toCSS }}
+    {{ if hugo.IsProduction }}
+      {{ $styles = resources.Get "sass/print.sass" | toCSS | postCSS | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
     <script type="text/javascript" src="/assets/pagedjs/paged.polyfill.js"></script>
   </head>
   <body>
+    <h1>Alice au pays des cryptos</h1>
     {{ with site.GetPage "/pages/lire" }}
       {{ partial "contents/list.html" . }}
     {{ end }}
+
+    <h2>4e de couv</h2>
   </body>
 </html>
