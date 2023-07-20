@@ -1,8 +1,28 @@
 ---
 title: Menu principal
 items:
+- title: Actualités
+  target: "/actualites/"
+  kind: page
+  children: []
+- title: Définitions
+  target: "/definitions/"
+  kind: page
+  children: []
 - title: En une page
   target: "/en-une-page/"
+  kind: page
+  children: []
+- title: Équipe
+  target: "/equipe/"
+  kind: page
+  children:
+  - title: Équipe éditoriale
+    target: "/equipe/equipe-editoriale/"
+    kind: page
+    children: []
+- title: Organisations
+  target: "/organisations/"
   kind: page
   children: []
 - title: Villes
@@ -49,24 +69,4 @@ items:
     target: "/villes/self-made-city/"
     kind: page
     children: []
-- title: Définitions
-  target: "/definitions/"
-  kind: page
-  children: []
-- title: Actualités
-  target: "/actualites/"
-  kind: page
-  children: []
-- title: Équipe
-  target: "/equipe/"
-  kind: page
-  children:
-  - title: Équipe éditoriale
-    target: "/equipe/equipe-editoriale/"
-    kind: page
-    children: []
-- title: Organisations
-  target: "/organisations/"
-  kind: page
-  children: []
 
