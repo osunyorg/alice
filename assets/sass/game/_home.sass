@@ -7,10 +7,12 @@
         height: 150px
         width: auto
         margin: auto
-    a[href="#game"]
+    a.btn
         @include btn
-        background: $orange
-        margin: $spacing2 auto
+        &--major
+            background: black
+            color: white
+            margin: $spacing2 auto
     .introduction
         margin: $spacing3 auto
         @include media-breakpoint-up(desktop)

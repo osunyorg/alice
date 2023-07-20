@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/assets/pagedjs/pagedjs.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/pagedjs/interface.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/pagedjs/print.css" />
+    <script type="text/javascript" src="/assets/pagedjs/paged.polyfill.js"></script>
+  </head>
+  <body>
+    {{ with site.GetPage "/pages/lire" }}
+      {{ .}}
+    {{ end }}
+  </body>
+</html>
