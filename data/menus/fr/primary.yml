@@ -1,6 +1,10 @@
 ---
 title: Menu principal
 items:
+- title: En une page
+  target: "/en-une-page/"
+  kind: page
+  children: []
 - title: Villes
   target: "/villes/"
   kind: page
