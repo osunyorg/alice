@@ -8,6 +8,7 @@ export class Game {
     return this.canvas.height
   }
   constructor() {
+    this.tick = 0;
     this.container = document.querySelector('#game');
 
     if (!this.container) {
@@ -38,12 +39,16 @@ export class Game {
     this.canvas.height = this.container.offsetHeight;
   }
   loop () {
+    this.tick += 1;
+
     this.ctx.clearRect(0, 0, this.width, this.height);
     requestAnimationFrame(this.loop.bind(this));
     this.scene.update();
 
     this.camera.x = -this.scene.hero.x - this.scene.hero.width / 2 + this.width / 2;
     this.camera.y = -this.scene.hero.y - this.scene.hero.height / 2 + this.height / 2;
+
+    this.container.style.backgroundPosition = `${this.camera.x + this.tick*0.2}px ${this.camera.y}px`;
   }
   drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {
     this.ctx.drawImage(image, sx, sy, sw, sh, dx + this.camera.x, dy + this.camera.y, dw, dh);

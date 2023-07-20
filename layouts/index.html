@@ -26,6 +26,14 @@
             {{ range .Params.contents }}
               {{ if eq .template "chapter" }}
                 {{ partial "PrepareHTML" .data.text }}
+                <p>
+                  <a href="/jouer/" class="btn btn--major">
+                    Jouer
+                  </a>
+                  <a href="/lire/" class="btn">
+                    Pas le temps de jouer, je veux lire
+                  </a>
+                </p>
                 <div class="small">
                   {{ partial "PrepareText" .data.notes }}
                 </div>
@@ -34,71 +42,7 @@
           </div>
         </div>
       </section>
-      <div class="screen game" id="game">
-        <div class="definitions">
-          {{ with site.GetPage "/pages/definitions" }}
-            <ul>
-              {{ range .Params.contents }}
-                {{ if eq .template "chapter" }}
-                  <li class="popin" id="{{ urlize .title }}">
-                    <article class="definition">
-                      <h2 class="h1">{{ .title }}</h2>
-                      {{ with .data}}
-                        {{ safeHTML .text  }}
-                      {{ end }}
-                      <a class="close"></a>
-                    </article>
-                  </li>
-                {{ end }}
-              {{ end }}
-            </ul>
-          {{ end }}
-        </div>
-    
-        <div class="cities">
-          <ul>
-            {{ with site.GetPage "/pages/villes" }}
-              {{ range .Pages }}
-                <li class="popin popin--offcanvas" id="{{ .Params.slug }}">
-                  <div class="city">
-                    {{ partial "commons/image.html"
-                      (dict
-                        "image"    .Params.image
-                        "sizes"    site.Params.image_sizes.design_system.hero
-                        "lazy"     false
-                      ) }}
-                    <div class="content">
-                      <h2 class="h1">{{ .Title }}</h2>
-                      <h3>{{ .Params.summary }}</h3>
-                      {{ partial "blocks/list" . }}
-                    </div>
-                    <a class="close"></a>
-                  </div>
-                </li>
-              {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-    
-        <div class="game-ui">
-          <div class="coins"></div>
-          <div class="controls">
-            <button data-action="left"><img class="arrow" src=/assets/images/arrows/gauche.svg></button>
-            <button data-action="up"><img class="arrow" src=/assets/images/arrows/haut.svg></button>
-            <button data-action="down"><img class="arrow" src=/assets/images/arrows/bas.svg></button>
-            <button data-action="right"><img class="arrow" src=/assets/images/arrows/droite.svg></button>
-          </div>
-        </div>
-      </div>
     </main>
-    <audio src="/assets/sounds/coin.mp3" id="sound-coin">
-    <audio src="/assets/sounds/city.mp3" id="sound-city">
-    <audio src="/assets/sounds/step_grass_l.mp3" id="sound-step-l">
-    <audio src="/assets/sounds/step_grass_r.mp3" id="sound-step-r">
-    <audio src="/assets/sounds/troll01.mp3" id="sound-troll-1">
-    <audio src="/assets/sounds/troll02.mp3" id="sound-troll-2">
-    <audio src="/assets/sounds/troll03.mp3" id="sound-troll-3">
-
     {{- partial "footer/plausible.html" . -}}
     {{- partial "footer/js.html" . -}}
     {{- partial "footer/script.html" . -}}
