@@ -9,10 +9,6 @@ items:
   target: "/en-une-page/"
   kind: page
   children: []
-- title: Organisations
-  target: "/organisations/"
-  kind: page
-  children: []
 - title: Villes
   target: "/villes/"
   kind: page
