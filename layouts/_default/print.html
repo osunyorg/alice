@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
+    <link rel="icon" type="image/ico" href="/assets/images/favicons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/pagedjs.css" />
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/interface.css" />
     {{ $styles := resources.Get "sass/print.sass" | toCSS }}
@@ -43,7 +44,7 @@
           {{ $media := partial "GetMedia" .Params.image.id }}
           <img class="city__illustration" src="{{ $media.url }}">
           <h2>{{ .Title }}</h2>
-          <p><i>{{ .Params.summary }}</i></p>
+          <h3>{{ .Params.summary }}</h3>
           {{ range .Params.contents }}
             {{ if eq .template "chapter" }}
               {{ partial "PrepareHTML" .data.text }}
@@ -63,9 +64,23 @@
         {{ end }}
       </section>
     {{ end }}
+    <section class="blank"></section>
+    {{ with site.GetPage "/pages/trolls" }}
+      <section class="trolls">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Params.summary }}</p>
+        {{ range $index, $troll := .Params.contents }}
+          <div class="troll">
+            <p>{{ $troll.title }}</p>
+            
+            <img src="/assets/images/print/troll{{ add 1 (mod $index 5) }}.png">
+          </div>
+        {{ end }}
+      </section>
+    {{ end }}
+    <section class="blank"></section>
     <section class="last-page">
       {{ with site.GetPage "/" }}
-        <h2>Alice au pays des cryptos</h2>
         {{ range .Params.contents }}
           {{ if eq .template "call_to_action" }}
             {{ partial "PrepareHTML" .data.text }}
