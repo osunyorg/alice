@@ -5,8 +5,4 @@ items:
   target: "/mentions-legales/"
   kind: page
   children: []
-- title: Plan du site
-  target: "/plan-du-site/"
-  kind: page
-  children: []
 
