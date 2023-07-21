@@ -10,14 +10,58 @@
       {{ $styles = resources.Get "sass/print.sass" | toCSS | postCSS | minify | fingerprint }}
     {{ end }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-    <script type="text/javascript" src="/assets/pagedjs/paged.polyfill.js"></script>
   </head>
   <body>
-    <h1>Alice au pays des cryptos</h1>
-    {{ with site.GetPage "/pages/lire" }}
-      {{ partial "contents/list.html" . }}
+    <section class="cover">
+      <img src="/assets/images/print/alice.png">
+      <h1>Alice au pays des cryptos</h1>
+      <p>Etienne Mineur & Arnaud Levy </p>
+    </section>
+    <section class="intro">
+      {{ with site.GetPage "/" }}
+        <h2>{{ .Params.summary }}</h2>
+        {{ range .Params.contents }}
+          {{ if eq .template "call_to_action" }}
+            {{ partial "PrepareHTML" .data.text }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </section>
+    <section class="intro">
+      {{ with site.GetPage "/" }}
+        <h2>Crédits</h2>
+        {{ range .Params.contents }}
+          {{ if eq .template "chapter" }}
+            {{ partial "PrepareHTML" .data.notes }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </section>
+    {{ with site.GetPage "/pages/villes" }}
+      {{ range .Pages }}
+        <section class="city">
+          {{ $media := partial "GetMedia" .Params.image.id }}
+          <img class="city__illustration" src="{{ $media.url }}">
+          <h2>{{ .Title }}</h2>
+          <p><i>{{ .Params.summary }}</i></p>
+          {{ range .Params.contents }}
+            {{ if eq .template "chapter" }}
+              {{ partial "PrepareHTML" .data.text }}
+            {{ end }}
+          {{ end }}
+        </section>
+      {{ end }}
     {{ end }}
-
-    <h2>4e de couv</h2>
+    <section class="last-page">
+      {{ with site.GetPage "/" }}
+        <h2>Alice au pays des cryptos</h2>
+        {{ range .Params.contents }}
+          {{ if eq .template "call_to_action" }}
+            {{ partial "PrepareHTML" .data.text }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </section>
+    <script type="text/javascript" src="/assets/pagedjs/paged.polyfill.min.js" defer async></script>
   </body>
 </html>

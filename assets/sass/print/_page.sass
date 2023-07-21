@@ -1,24 +1,37 @@
 body
     background-color: #B5C9C9
 
-/* h1 will be used to define running head */
-h1
-    string-set: title content(text)
-
 @page
     size: A5
-    margin-top: 15mm
-    margin-left: 20mm
-    margin-right: 15mm
+    margin-top: 20mm
     margin-bottom: 25mm
+    // bleed: 5mm
+    // marks: crop cross
 
-    @bottom-center
-        content: element(footer)
+@page:first
+    margin-left: 25mm
+    margin-right: 20mm
+    @bottom-left
+        content: none
+    @bottom-right
+        content: none
 
-    @top-right
+@page:blank
+    @bottom-left
+        content: none
+    @bottom-right
+        content: none
+
+@page:left
+    margin-left: 25mm
+    margin-right: 15mm
+
+@page:right
+    margin-left: 15mm
+    margin-right: 25mm
+    @bottom-left
+        content: "Alice au pays des cryptos" 
+        font-size: 0.6em
+    @bottom-right
         content: counter(page)
-        font-size: 0.7em
-
-    @top-left
-        content: string(title)
-        font-size: 0.7em
+        font-size: 0.6em

@@ -1,6 +1,7 @@
 import { WORLD } from "js/data/world";
 import SpeakingThing from "./SpeakingThing";
 import UI from "js/UI";
+import { game } from "js/Game";
 
 export default class City extends SpeakingThing {
   constructor(data) {
@@ -20,15 +21,17 @@ export default class City extends SpeakingThing {
     this.data = data;
     this.html = data.html;
     this.canCollide = true;
-    this.collideTimeoutDuration = 5000;
     this.isCollided = false;
-    this.wasCollided = false
+    this.wasCollided = false;
 
     this.dialog.classList.add('game-dialog--action');
     this.dialog.addEventListener('click', () => this.openPopin());
   }
 
   onCollide() {
+    if (!this.wasCollided)
+      game.scene.hero.isWalkingToTarget = false;
+
     this.isCollided = true;
   }
 
