@@ -52,6 +52,17 @@
         </section>
       {{ end }}
     {{ end }}
+    {{ with site.GetPage "/pages/definitions" }}
+      <section class="definitions">
+        <h2>{{ .Title }}</h2>
+        {{ range .Params.contents }}
+          <div class="definition">
+            <h3>{{ .title }}</h3>
+            {{ partial "PrepareHTML" .data.text }}
+          </div>
+        {{ end }}
+      </section>
+    {{ end }}
     <section class="last-page">
       {{ with site.GetPage "/" }}
         <h2>Alice au pays des cryptos</h2>
