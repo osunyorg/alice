@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
+    <link rel="icon" type="image/ico" href="/assets/images/favicons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/pagedjs.css" />
     <link rel="stylesheet" type="text/css" href="/assets/pagedjs/interface.css" />
     {{ $styles := resources.Get "sass/print.sass" | toCSS }}
@@ -43,7 +44,7 @@
           {{ $media := partial "GetMedia" .Params.image.id }}
           <img class="city__illustration" src="{{ $media.url }}">
           <h2>{{ .Title }}</h2>
-          <p><i>{{ .Params.summary }}</i></p>
+          <h3>{{ .Params.summary }}</h3>
           {{ range .Params.contents }}
             {{ if eq .template "chapter" }}
               {{ partial "PrepareHTML" .data.text }}
