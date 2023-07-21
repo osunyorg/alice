@@ -63,9 +63,22 @@
         {{ end }}
       </section>
     {{ end }}
+    <section class="blank"></section>
+    {{ with site.GetPage "/pages/trolls" }}
+      <section class="trolls">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Params.summary }}</p>
+        {{ range $index, $troll := .Params.contents }}
+          <div class="troll">
+            <p>{{ $troll.title }}</p>
+            
+            <img src="/assets/images/print/troll{{ add 1 (mod $index 5) }}.png">
+          </div>
+        {{ end }}
+      </section>
+    {{ end }}
     <section class="last-page">
       {{ with site.GetPage "/" }}
-        <h2>Alice au pays des cryptos</h2>
         {{ range .Params.contents }}
           {{ if eq .template "call_to_action" }}
             {{ partial "PrepareHTML" .data.text }}
