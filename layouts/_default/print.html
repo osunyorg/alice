@@ -71,9 +71,10 @@
         <p>{{ .Params.summary }}</p>
         {{ range $index, $troll := .Params.contents }}
           <div class="troll">
-            <p>{{ $troll.title }}</p>
-            
-            <img src="/assets/images/print/troll{{ add 1 (mod $index 5) }}.png">
+            <div>
+              <p>{{ $troll.title }}</p>
+              <img src="/assets/images/print/troll{{ add 1 (mod $index 5) }}.png">
+            </div>
           </div>
         {{ end }}
       </section>
