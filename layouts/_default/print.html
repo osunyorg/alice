@@ -16,7 +16,6 @@
     <section class="cover">
       <img src="/assets/images/print/alice.png">
       <h1>Alice au pays des cryptos</h1>
-      <p>Etienne Mineur & Arnaud Levy</p>
     </section>
     <section class="intro">
       {{ with site.GetPage "/" }}
@@ -73,7 +72,7 @@
           <div class="troll">
             <div>
               <p>{{ $troll.title }}</p>
-              <img src="/assets/images/print/troll{{ add 1 (mod $index 5) }}.png">
+              <img src="/assets/images/print/troll{{ add 1 (mod $index 10) }}.png">
             </div>
           </div>
         {{ end }}
