@@ -13,4 +13,8 @@ items:
   target: https://github.com/noesya/alice/
   kind: url
   children: []
+- title: Lire
+  target: "/lire/"
+  kind: url
+  children: []
 
