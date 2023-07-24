@@ -9,16 +9,16 @@ items:
   target: "/lire/"
   kind: url
   children: []
-- title: Acheter
-  target: ''
+- title: Imprimer
+  target: "/imprimer/"
+  kind: url
+  children: []
+- title: Code source
+  target: https://github.com/noesya/alice/
   kind: url
   children: []
 - title: Mentions légales
   target: "/mentions-legales/"
   kind: page
-  children: []
-- title: Code source
-  target: https://github.com/noesya/alice/
-  kind: url
   children: []
 
