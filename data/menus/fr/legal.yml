@@ -5,4 +5,8 @@ items:
   target: "/mentions-legales/"
   kind: page
   children: []
+- title: Code source
+  target: https://github.com/noesya/alice/
+  kind: url
+  children: []
 
