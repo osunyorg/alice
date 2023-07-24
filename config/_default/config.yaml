@@ -8,5 +8,11 @@ deployment:
       URL: "s3://9336cf5b1949519492a4da6f2ab0244a9dfebba6cf35f74d7a4b3fb348908235?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage"
 params:
   plausible: alice.etienne.design
+  logo:
+    header: "/assets/images/alice.png"
   summary:
     position: hero
+  image_sizes:
+    design_system:
+      lightbox: 
+        disabled: true

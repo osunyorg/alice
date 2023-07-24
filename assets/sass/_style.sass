@@ -3,72 +3,58 @@ h1, .h1
     line-height: 100%
     text-align: center
 
+h2, .h2
+    color: $color-accent
+
 h3, .h3
     font-style: italic
     font-weight: normal
 
-i
-    font-size: px2rem(35)
-    padding: px2rem(40) 0 
-    line-height: px2rem(50)
+header#document-header
     position: relative
-    &::after,
-    &::before
-        font-size: px2rem(80)
-        line-height: px2rem(80)
-        display: block
-        position: absolute
-    &::after,
-        content: "”"
-        bottom: -px2rem(48)
-    &::before
-        content: "“"
-        top: 0
-p
-    margin-bottom: 50px
-    margin-top: 50px
-.button
-    font-size: px2rem(26)
-    text-decoration: none
-    padding: px2rem(12) px2rem(32)
-    background: $orange
+    padding-top: $spacing3
+    nav
+        .container
+            // Alice (logo) centered
+            justify-content: center
+    button
+        // No menu
+        display: none !important
+.hero
+    min-height: auto
+    margin: 0
+    padding: 0
+    .container
+        margin-top: 0
+        padding-top: 0
+        .content
+            padding-top: 0
+            h1,
+            hgroup
+                // No cols
+                width: 100%
+            .lead
+                font-style: italic
+                text-align: center
 
 .breadcrumb-nav
     display: none
-h2
-    color: $color-accent
-p.block-title
-    text-transform: none !important
-    font-weight: bold !important
-header#document-header 
-    display: none
-p.lead
-    font-style: italic
-    text-align: center
-hgroup
-    width: col(12) !important
-.block 
-    margin-top: 1rem
-    margin-bottom: 1rem
-    .top
-        margin-bottom: 1rem
+
 .toc-content
     .toc-title
         display: none
-.hero 
-    .content figure img 
-        height: 150px
-        width: 128px
-.hero--with-image 
-    .content
-        flex-direction: column-reverse
-        align-items: center
-footer#document-footer
-    margin-top: 5rem
-    padding-top: 10rem
-    .container
-        padding-bottom: 0
-    p
-        width: col(10)
-        margin-right: $spacing4
-        margin-top: 0
+
+.blocks
+    .block-call_to_action 
+        .call_to_action 
+            .description
+                p
+                    @include lead-hero
+                    font-weight: normal
+                    margin: 0
+    .block-partners
+        .organization
+            .media
+                background: none
+            h3
+                display: none
