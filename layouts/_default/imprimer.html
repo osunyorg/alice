@@ -71,8 +71,11 @@
         {{ range $index, $troll := .Params.contents }}
           <div class="troll">
             <div>
-              <p>{{ $troll.title }}</p>
-              <img src="/assets/images/print/troll{{ add 1 (mod $index 10) }}.png">
+              {{ partial "PrepareHTML" $troll.data.text }}
+              {{ with $troll.data.image.id }}
+                {{ $media := partial "GetMedia" . }}
+                <img src="{{ $media.url }}">
+              {{ end }}
             </div>
           </div>
         {{ end }}

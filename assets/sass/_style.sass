@@ -40,21 +40,30 @@ header#document-header
 .breadcrumb-nav
     display: none
 
+
 .toc-content
     .toc-title
         display: none
 
 .blocks
-    .block-call_to_action 
-        .call_to_action 
-            .description
-                p
-                    @include lead-hero
-                    font-weight: normal
-                    margin: 0
-    .block-partners
-        .organization
-            .media
-                background: none
-            h3
-                display: none
+    .block
+        .top
+            margin-bottom: 0
+            .block-title
+                text-transform: none
+                font-weight: bold
+        &-call_to_action 
+            .call_to_action 
+                .description
+                    p
+                        @include lead-hero
+                        font-weight: normal
+                        margin: 0
+        &-partners
+            .top
+                margin: 0
+            .organization
+                .media
+                    background: none
+                h3
+                    display: none

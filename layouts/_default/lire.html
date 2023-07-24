@@ -1,0 +1,55 @@
+{{ define "main" }}
+  {{ partial "pages/hero.html" . }}
+
+  <div class="document-content">
+    <div class="blocks">
+      <section class="intro">
+        {{ with site.GetPage "/" }}
+          <h2>{{ .Params.summary }}</h2>
+          {{ range .Params.contents }}
+            {{ if eq .template "call_to_action" }}
+              {{ partial "PrepareHTML" .data.text }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </section>
+      <section class="intro">
+        {{ with site.GetPage "/" }}
+          <h2>Crédits</h2>
+          {{ range .Params.contents }}
+            {{ if eq .template "chapter" }}
+              {{ partial "PrepareHTML" .data.notes }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </section>
+      {{ with site.GetPage "/pages/villes" }}
+        {{ range .Pages }}
+          <div class="heading container" id="">
+            <h2>{{ .Title }}</h2>
+          </div>
+          {{ $media := partial "GetMedia" .Params.image.id }}
+          <img src="{{ $media.url }}">
+          {{ partial "contents/list.html" . }}
+        {{ end }}
+      {{ end }}
+      {{ with site.GetPage "/pages/definitions" }}
+        <div class="heading container" id="">
+          <h2>{{ .Title }}</h2>
+        </div>
+        {{ partial "contents/list.html" . }}
+      {{ end }}
+      {{ with site.GetPage "/pages/trolls" }}
+        <section class="trolls">
+          <div class="heading container" id="">
+            <h2>{{ .Title }}</h2>
+          </div>
+          <p>{{ .Params.summary }}</p>
+
+          {{ partial "contents/list.html" . }}
+        </section>
+      {{ end }}
+    </div>
+  </div>
+
+{{ end }}
