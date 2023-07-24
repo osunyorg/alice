@@ -1,6 +1,10 @@
 ---
 title: Informations légales
 items:
+- title: Jouer
+  target: "/jouer/"
+  kind: url
+  children: []
 - title: Mentions légales
   target: "/mentions-legales/"
   kind: page
