@@ -21,12 +21,12 @@ items:
   target: https://github.com/noesya/alice/blob/main/LICENSE
   kind: url
   children: []
-- title: Mentions légales
-  target: "/mentions-legales/"
-  kind: page
-  children: []
 - title: Crédits
   target: "/credits/"
+  kind: page
+  children: []
+- title: Mentions légales
+  target: "/mentions-legales/"
   kind: page
   children: []
 
