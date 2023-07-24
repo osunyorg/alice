@@ -14,13 +14,11 @@
         {{ end }}
       </section>
       <section class="intro">
-        {{ with site.GetPage "/" }}
-          <h2>Crédits</h2>
-          {{ range .Params.contents }}
-            {{ if eq .template "chapter" }}
-              {{ partial "PrepareHTML" .data.notes }}
-            {{ end }}
-          {{ end }}
+        {{ with site.GetPage "/credits" }}
+          <div class="heading container" id="">
+            <h2>{{ .Title }}</h2>
+          </div>
+          {{ partial "contents/list.html" . }}
         {{ end }}
       </section>
       {{ with site.GetPage "/pages/villes" }}

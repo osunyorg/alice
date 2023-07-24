@@ -56,6 +56,14 @@
             {{ end }}
           </ul>
         </div>
+
+        <div class="trolls">
+          {{ with site.GetPage "/pages/trolls" }}
+            {{ range $index, $troll := .Params.contents }}
+              {{ partial "PrepareHTML" $troll.data.text }}
+            {{ end }}
+          {{ end }}
+        </div>
     
         <div class="game-ui">
           <div class="coins"></div>

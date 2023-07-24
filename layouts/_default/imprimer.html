@@ -28,11 +28,11 @@
       {{ end }}
     </section>
     <section class="intro">
-      {{ with site.GetPage "/" }}
-        <h2>Crédits</h2>
+      {{ with site.GetPage "/credits" }}
+        <h2>{{ .Title }}</h2>
         {{ range .Params.contents }}
           {{ if eq .template "chapter" }}
-            {{ partial "PrepareHTML" .data.notes }}
+            {{ partial "PrepareHTML" .data.text }}
           {{ end }}
         {{ end }}
       {{ end }}
