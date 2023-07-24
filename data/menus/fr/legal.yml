@@ -13,6 +13,10 @@ items:
   target: "/imprimer/"
   kind: url
   children: []
+- title: Crédits
+  target: "/credits/"
+  kind: page
+  children: []
 - title: Code source
   target: https://github.com/noesya/alice/
   kind: url
@@ -20,10 +24,6 @@ items:
 - title: License GPL
   target: https://github.com/noesya/alice/blob/main/LICENSE
   kind: url
-  children: []
-- title: Crédits
-  target: "/credits/"
-  kind: page
   children: []
 - title: Mentions légales
   target: "/mentions-legales/"
