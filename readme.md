@@ -1,3 +1,2 @@
-# Template Osuny
+# Alice au pays des cryptos
 
-[Documentation officielle sur developers.osuny.org](https://developers.osuny.org)
