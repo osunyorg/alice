@@ -5,16 +5,16 @@ items:
   target: "/jouer/"
   kind: url
   children: []
+- title: Lire
+  target: "/lire/"
+  kind: url
+  children: []
 - title: Mentions légales
   target: "/mentions-legales/"
   kind: page
   children: []
 - title: Code source
   target: https://github.com/noesya/alice/
-  kind: url
-  children: []
-- title: Lire
-  target: "/lire/"
   kind: url
   children: []
 
