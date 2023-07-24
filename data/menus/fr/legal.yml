@@ -25,4 +25,8 @@ items:
   target: "/mentions-legales/"
   kind: page
   children: []
+- title: Crédits
+  target: "/credits/"
+  kind: page
+  children: []
 
