@@ -45,7 +45,7 @@ export const COINS = [
         y: 350,
     },
     {
-        name: 'minage',
+        id: 'minage',
         x: 900,
         y: 700,
     },
