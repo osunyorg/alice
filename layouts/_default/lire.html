@@ -5,7 +5,7 @@
     <div class="blocks">
       {{ with site.GetPage "/pages/villes" }}
         {{ range .Pages }}
-          <div class="heading container" id="">
+          <div class="heading container" id="{{ .Title | urlize }}">
             <h2>{{ .Title }}</h2>
           </div>
           <h3>{{ .Params.summary }}</h3>
@@ -19,14 +19,14 @@
         {{ end }}
       {{ end }}
       {{ with site.GetPage "/pages/definitions" }}
-        <div class="heading container" id="">
+        <div class="heading container" id="{{ .Title | urlize }}">
           <h2>{{ .Title }}</h2>
         </div>
         {{ partial "contents/list.html" . }}
       {{ end }}
       {{ with site.GetPage "/pages/trolls" }}
         <section class="trolls">
-          <div class="heading container" id="">
+          <div class="heading container" id="{{ .Title | urlize }}">
             <h2>{{ .Title }}</h2>
           </div>
           <p>{{ .Params.summary }}</p>
