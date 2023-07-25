@@ -29,12 +29,6 @@ export const TROLLS = {
         '/assets/images/characters/troll-4.png',
         '/assets/images/characters/troll-5.png'
     ],
-    authors: [
-        'iLoveMoney',
-        'anonymousTroll',
-        'cryptoFan',
-        'NFTcollector'
-    ],
     slangs: [
         'Restez pauvres bandes de fils de putes',
         'Vas-y régule moi ça ma gourmande',

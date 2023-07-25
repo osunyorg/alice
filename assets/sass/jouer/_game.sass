@@ -1,3 +1,21 @@
+\:root
+    --sea-offset: 0px 0px
+    --sea-offset-2: 0px 0px
+
+@keyframes waves
+    0%
+        background-position: 0 0
+    50%
+        background-position: 70px 10px
+    100%
+        background-position: 128px 0
+
+@keyframes waves-reverse
+    0%
+        background-position: 0 0
+    100%
+        background-position: -128px 0
+
 #game
     display: block
     position: fixed
@@ -6,11 +24,29 @@
     canvas
         position: absolute
         inset: 0
-        background-image: url('/assets/images/sea.gif')
-        background-size: 64px
-        image-rendering: pixelated
     canvas, .popin--offcanvas
         transition: 0.5s transform ease-in-out
+    .sea
+        position: absolute
+        inset: 0
+        background-color: #00979E
+        &::after, &::before
+            content: ''
+            position: absolute
+            inset: 0
+            background-image: url('/assets/images/waves.svg')
+            background-size: 128px 64px
+            background-position: var(--sea-offset)
+            opacity: 1
+            // animation: waves 12s linear infinite
+            
+        &::before
+            top: -30px
+            opacity: 0.4
+            // opacity: 0.4
+            background-position: var(--sea-offset-2)
+            // animation: waves-reverse 24s 1s linear infinite
+
 
     .game-dialog
         background: black
