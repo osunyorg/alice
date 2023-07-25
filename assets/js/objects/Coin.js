@@ -1,7 +1,5 @@
 import UI from "js/UI";
 import Thing from "./Thing";
-// import { popinCoin } from "./Popin";
-import { game } from "js/Game";
 
 export default class Coin extends Thing {
   constructor(data) {
@@ -14,14 +12,22 @@ export default class Coin extends Thing {
 
     this.type = "coin";
     this.data = data;
-    this.canCollide = true;
     this.active = true; 
+    this.popin;
   }
 
-  onCollide() {
+  startCollide() {
+    this.popin = UI.openPopin(this.data.id);
+    this.popin.element.querySelector('.pick').addEventListener('click', this.pick.bind(this));
+  }
+
+  pick() {
     this.active = false;
-    UI.open(this.data.id);
     UI.collectCoin(this.data.id);
+  }
+
+  stopCollide() {
+    this.popin.close();
   }
 
   update() {

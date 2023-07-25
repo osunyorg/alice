@@ -9,28 +9,32 @@ class UI {
       this.popins[element.id] = new Popin(element);
     });
     this.coinsContainer = document.querySelector('.coins');
+    this.coinsPicked = 0;
+    this.coinsTotal = document.querySelectorAll('.definitions .definition').length;
+    this.update();
   }
-  closeAll() {
-    for (let key in this.popins) {
-      this.popins[key].close();
+  closeAllPopins() {
+    for (let id in this.popins) {
+      this.closePopin(id);
     }
   }
-  open(id) {
-    this.closeAll();
+  openPopin(id) {
+    this.closeAllPopins();
     this.popins[id].open();
+    return this.popins[id];
   }
-  visitCity(id) {
-    this.open(id); 
-    document.getElementById('sound-city').play();
+  closePopin(id) {
+    this.popins[id].close();
   }
   collectCoin(id) {
-    const coin = document.createElement('div'),
-      title = this.popins[id].element.querySelector('h2').innerText;
-    coin.classList.add('coin')
-    coin.innerHTML = `<p>${title}</p>`;
-    this.coinsContainer.appendChild(coin);
-    coin.addEventListener('click', this.open.bind(this, id));
+    this.coinsPicked += 1;
     document.getElementById('sound-coin').play();
+    this.closePopin(id)
+    this.update();
+  }
+  update() {
+    document.querySelector('.coins__picked').innerHTML = this.coinsPicked;
+    document.querySelector('.coins__total').innerHTML = this.coinsTotal;
   }
 }
 

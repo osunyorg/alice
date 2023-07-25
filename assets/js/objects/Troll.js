@@ -73,11 +73,11 @@ export default class Troll extends Character {
   }
   onCollide() {
     super.onCollide();
-    this.randomSlang();
+    this.pickRandomSlang();
     this.speak(this.slang, this.voice);
     setTimeout(() => this.stopSpeaking(), this.slangMilliseconds);
   }
-  randomSlang() {
+  pickRandomSlang() {
     this.slang = this.slangs[Math.floor(Math.random() * this.slangs.length)].innerHTML;
   }
   update() {

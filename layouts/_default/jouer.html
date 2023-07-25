@@ -24,7 +24,7 @@
                       {{ with .data}}
                         {{ safeHTML .text  }}
                       {{ end }}
-                      <a class="close"></a>
+                      <a class="pick">Ramasser</a>
                     </article>
                   </li>
                 {{ end }}
@@ -67,7 +67,11 @@
         </div>
     
         <div class="game-ui">
-          <div class="coins"></div>
+          <div class="coins">
+            <div class="coin"></div>
+            <div class="coins__picked">0</div> /
+            <div class="coins__total">0</div>
+          </div>
           <div class="controls">
             <button data-action="left"><img class="arrow" src=/assets/images/arrows/gauche.svg></button>
             <button data-action="up"><img class="arrow" src=/assets/images/arrows/haut.svg></button>

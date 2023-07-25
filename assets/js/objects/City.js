@@ -29,30 +29,18 @@ export default class City extends SpeakingThing {
   }
 
   onCollide() {
-    if (!this.wasCollided)
-      game.scene.hero.isWalkingToTarget = false;
-
-    this.isCollided = true;
+    super.onCollide();
+    if (!this.wasCollided) {
+        game.scene.hero.isWalkingToTarget = false;
+    }
   }
 
   startCollide() {
-    UI.visitCity(this.data.id);
+    UI.openPopin(this.data.id);
+    document.getElementById('sound-city').play();
   }
 
   stopCollide() {
-    UI.closeAll();
-  }
-
-  update() {
-    super.update();
-
-    if (this.isCollided && !this.wasCollided) {
-      this.wasCollided = true;
-      this.startCollide();
-    } else if (!this.isCollided && this.wasCollided) {
-      this.wasCollided = false;
-      this.stopCollide();
-    }
-    this.isCollided = false;
+    UI.closeAllPopins();
   }
 }

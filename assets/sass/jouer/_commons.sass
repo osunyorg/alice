@@ -1,22 +1,4 @@
 #game
-    i
-        font-size: px2rem(35)
-        padding: px2rem(40) 0 
-        line-height: px2rem(50)
-        position: relative
-        &::after,
-        &::before
-            font-size: px2rem(80)
-            line-height: px2rem(80)
-            display: block
-            position: absolute
-        &::after,
-            content: "”"
-            bottom: -px2rem(48)
-        &::before
-            content: "“"
-            top: 0
-
     .screen
         position: relative
         min-height: 100vh
@@ -42,25 +24,13 @@
         justify-content: center
         flex-direction: column
         z-index: 10
+        @include media-breakpoint-down(desktop)
+            left: 0
+            right: 0
+            bottom: 0
         &.is-opened
             display: flex
             max-width: 600px
-        &:not(.popin--offcanvas)
-            @include media-breakpoint-down(desktop)
-                left: 0
-                right: 0
-                bottom: 0
-            &::before
-                content: ''
-                display: block
-                background-image: url(/assets/images/coin/coin.png)
-                background-size: 100% 100%
-                width: 40px
-                height: 40px
-                position: absolute
-                top: -18px
-                left: 18px
-                z-index: 4
         &--offcanvas
             background: white
             overflow-y: auto
@@ -68,7 +38,6 @@
             &.is-opened
                 display: block
             @include media-breakpoint-down(desktop)
-                inset: 15px
                 display: none
                 &.is-opened
                     display: block

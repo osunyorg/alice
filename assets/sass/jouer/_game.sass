@@ -109,45 +109,6 @@
                 canvas
                     transform: translateX(-250px)
 
-    .coins
-        display: flex
-        position: fixed
-        top: 30px
-        left: 30px
-        gap: 3px
-        z-index: 5
-        .coin
-            cursor: pointer
-            width: 30px
-            height: 30px
-            background-image: url('/assets/images/coin/flat-coin.png')
-            background-size: contain
-            p
-                background: black
-                color: white
-                font-size: px2rem(14)
-                padding: px2rem(5) px2rem(10)
-                position: absolute
-                top: 100%
-                margin-top: 10px
-                white-space: nowrap
-                opacity: 0
-                transition: .23s
-                transform: translateY(10px)
-                &::after
-                    content: ''
-                    width: 0
-                    height: 0
-                    border-style: solid
-                    border-width: 0 6px 10px 6px
-                    border-color: transparent transparent black transparent
-                    position: absolute
-                    bottom: 100%
-                    left: 9px
-            &:hover p
-                opacity: 1
-                transform: translateY(0)
-
     .controls
         position: absolute
         bottom: 0

@@ -26,7 +26,7 @@ export const TROLLS = [
     {
         x: 1800,
         y: 500,
-        image: '/assets/images/characters/troll-5.png',
+        sprite: '/assets/images/characters/troll-5.png',
         voice: 'sound-troll-5'
     }
 ]
