@@ -1,7 +1,7 @@
-import Controls from "js/Controls";
+import Controls from "js/game/Controls";
 import Character from "./Character"
-import { WORLD } from "js/data/world";
-import 'js/utils/lerp';
+import { WORLD } from "js/game/data/world";
+import 'js/game/utils/lerp';
 export default class Hero extends Character {
   constructor({x = 0, y = 0}) {
     super({

@@ -92,8 +92,10 @@
     <audio src="/assets/sounds/troll-3.mp3" id="sound-troll-5">
 
     {{- partial "footer/plausible.html" . -}}
-    {{- partial "footer/js.html" . -}}
-    {{- partial "footer/script.html" . -}}
+
+    {{ $js := resources.Get "js/game.js" | js.Build (dict "minify" hugo.IsProduction) | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
     {{- if not hugo.IsProduction -}}
       {{- partial "footer/debug.html" . -}}
     {{- end -}}

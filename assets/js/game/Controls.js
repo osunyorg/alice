@@ -1,4 +1,4 @@
-import { game } from "./Game";
+import { game } from "./MainGame";
 
 export default class Controls {
   constructor() {

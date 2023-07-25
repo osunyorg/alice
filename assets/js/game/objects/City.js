@@ -1,7 +1,7 @@
-import { WORLD } from "js/data/world";
+import { WORLD } from "js/game/data/world";
 import SpeakingThing from "./SpeakingThing";
-import UI from "js/UI";
-import { game } from "js/Game";
+import UI from "js/game/UI";
+import { game } from "js/game/MainGame";
 
 export default class City extends SpeakingThing {
   constructor(data) {

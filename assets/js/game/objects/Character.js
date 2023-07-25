@@ -1,4 +1,4 @@
-import { WORLD } from "js/data/world";
+import { WORLD } from "js/game/data/world";
 import Sprite from "./Sprite";
 
 export default class Character extends Sprite {

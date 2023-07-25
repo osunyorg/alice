@@ -1,4 +1,4 @@
-import { game } from "js/Game";
+import { game } from "js/game/MainGame";
 import Thing from "./Thing";
 
 export default class SpeakingThing extends Thing {

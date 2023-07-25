@@ -1,4 +1,4 @@
-import UI from "js/UI";
+import UI from "js/game/UI";
 import Thing from "./Thing";
 
 export default class Coin extends Thing {

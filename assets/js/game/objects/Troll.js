@@ -1,6 +1,6 @@
-import { TROLLS } from "js/data/trolls";
+import { TROLLS } from "js/game/data/trolls";
 import Character from "./Character";
-import { WORLD } from "js/data/world";
+import { WORLD } from "js/game/data/world";
 
 const ACTIONS = ["idle", "idle", "idle", "left", "right", "up", "down"];
 export default class Troll extends Character {
