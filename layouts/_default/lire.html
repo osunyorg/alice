@@ -58,6 +58,13 @@
         <div class="heading container" id="definitions">
           <h2>{{ .Title }}</h2>
         </div>
+        <div class="block block-summary">
+          <div class="container">
+            <div class="block-content">
+              <p class="h3" role="heading" aria-level="3">{{ .Params.summary }}</p>
+            </div>
+          </div>
+        </div>
         {{ partial "contents/list.html" . }}
       {{ end }}
       {{ with site.GetPage "/pages/trolls" }}
@@ -69,7 +76,7 @@
           <div class="block block-summary">
             <div class="container">
               <div class="block-content">
-                <p class="lead" role="heading" aria-level="3">{{ .Params.summary }}</p>
+                <p>{{ .Params.summary }}</p>
               </div>
             </div>
           </div>
