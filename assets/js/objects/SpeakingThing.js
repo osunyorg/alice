@@ -12,15 +12,13 @@ export default class SpeakingThing extends Thing {
     this.dialog.classList.add('game-dialog');
     game.container.append(this.dialog)
   }
-  speak(html) {
+  speak(html, voice) {
     if (this.isSpeaking) return false;
     this.dialog.innerHTML = html;
     this.dialog.style.display = "block";
     this.isSpeaking = true;
     this.updateDialog();
-    // 1, 2 ou 3
-    let voice = Math.floor(Math.random() * 3) + 1;
-    document.getElementById('sound-troll-' + voice).play();
+    document.getElementById(voice).play();
   }
   stopSpeaking() {
     this.dialog.style.display = "none";

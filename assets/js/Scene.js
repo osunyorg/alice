@@ -52,12 +52,8 @@ export default class Scene {
   }
   addTrolls() {
     let i = 0;
-    TROLLS.images.forEach((src, i) => {
-      this.trolls.push(new Troll({
-        x: TROLLS.positions[i].x,
-        y: TROLLS.positions[i].y,
-        src: src
-      }));
+    TROLLS.forEach((troll) => {
+      this.trolls.push(new Troll(troll));
     })
   }
   checkCollision() {
