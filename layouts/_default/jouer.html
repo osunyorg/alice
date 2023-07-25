@@ -93,7 +93,7 @@
 
     {{- partial "footer/plausible.html" . -}}
 
-    {{ $js := resources.Get "js/game.js" | js.Build (dict "minify" hugo.IsProduction) | fingerprint }}
+    {{ $js := resources.Get "js/game-app.js" | js.Build (dict "minify" hugo.IsProduction) | fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 
     {{- if not hugo.IsProduction -}}
