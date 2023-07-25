@@ -37,14 +37,6 @@ export default class Map extends Thing {
     game.ctx.fillStyle = active == 1 ? "transparent" : "red";
     game.ctx.fillRect(x * size + game.camera.x, y * size + game.camera.y, size, size)
     game.ctx.globalAlpha = 1.0;
-
-    if (active !== 1) {
-      const coinImage = new Image();
-      coinImage.src = "/assets/images/coin/coin.png"; 
-      
-      game.ctx.drawImage(coinImage, x * size + game.camera.x, y * size + game.camera.y, size, size);
-    }
- 
   }
   update() {
     // return;

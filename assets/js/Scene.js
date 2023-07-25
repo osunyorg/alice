@@ -31,6 +31,19 @@ export default class Scene {
       this.hero
     ]
   }
+  doubleMatrix() {
+    let matrice = [];
+    WORLD.collisions.matrice.forEach(line => {
+        let newline = '';
+        [...line].forEach(value => {
+            newline += value;
+            newline += value;
+        })
+        matrice.push(newline);
+        matrice.push(newline);
+    });
+    console.log(matrice);
+  }
   addSea() {
     this.sea = new Sea();
   }

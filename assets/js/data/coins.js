@@ -96,7 +96,7 @@ export const COINS = [
     },
     {
         id: 'stablecoin',
-        x: 100,
+        x: 130,
         y: 550,
     },
     {
