@@ -1,6 +1,10 @@
 export const WORLD = {
   width: 2500,
   height: 1016,
+  hero: {
+    x: 625,
+    y: 254
+  },
   characters: {
     scale: 0.8
   },
