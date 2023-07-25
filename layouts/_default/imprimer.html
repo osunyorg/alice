@@ -20,10 +20,8 @@
     <section class="intro">
       {{ with site.GetPage "/" }}
         <h2>{{ .Params.summary }}</h2>
-        {{ range .Params.contents }}
-          {{ if eq .template "call_to_action" }}
-            {{ partial "PrepareHTML" .data.text }}
-          {{ end }}
+        {{ with index .Params.contents 0 }}
+          {{ partial "PrepareHTML" .data.text }}
         {{ end }}
       {{ end }}
     </section>
@@ -84,10 +82,8 @@
     <section class="blank"></section>
     <section class="last-page">
       {{ with site.GetPage "/" }}
-        {{ range .Params.contents }}
-          {{ if eq .template "call_to_action" }}
-            {{ partial "PrepareHTML" .data.text }}
-          {{ end }}
+        {{ with index (last 1 .Params.contents) 0}}
+          {{ partial "PrepareHTML" .data.text }}
         {{ end }}
       {{ end }}
     </section>
