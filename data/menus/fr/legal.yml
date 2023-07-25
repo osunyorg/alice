@@ -13,10 +13,6 @@ items:
   target: "/imprimer/"
   kind: url
   children: []
-- title: Crédits
-  target: "/credits/"
-  kind: page
-  children: []
 - title: Mentions légales
   target: "/mentions-legales/"
   kind: page
