@@ -56,8 +56,8 @@ export const COINS = [
     },
     {
         id: 'nft-non-fongible-token',
-        x: 2200,
-        y: 100,
+        x: 1700,
+        y: 400,
      },
     {
         id: 'oracle',
