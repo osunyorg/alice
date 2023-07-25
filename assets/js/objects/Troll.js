@@ -4,15 +4,15 @@ import { WORLD } from "js/data/world";
 
 const ACTIONS = ["idle", "idle", "idle", "left", "right", "up", "down"];
 export default class Troll extends Character {
-  constructor({x = 0, y = 0, src = null}) {
+  constructor(data) {
     super({
-      x: x,
-      y: y,
+      x: data.x,
+      y: data.y,
       width: 128 * WORLD.characters.scale,
       height: 150 * WORLD.characters.scale,
       srcWidth: 256,
       srcHeight: 300,
-      src: src,
+      src: data.sprite,
       animations: {
         idle: {
           steps: 8,
@@ -32,8 +32,10 @@ export default class Troll extends Character {
     this.changeActionChance = 0.05;
     this.speed = 2;
     this.action = "idle";
+    this.voice = data.voice
 
     this.isSpeaking = false;
+    this.slangs = document.querySelectorAll('.trolls p');
     this.slang = "";
     this.slangMilliseconds = 5000;
 
@@ -71,19 +73,12 @@ export default class Troll extends Character {
   }
   onCollide() {
     super.onCollide();
-    const slang = TROLLS.slangs[Math.round(Math.random() * (TROLLS.slangs.length-1))],
-      author = TROLLS.authors[Math.round(Math.random() * (TROLLS.authors.length-1))];
-
-    // this.speak(`
-    //   <p>“${slang}”</p>
-    //   <small>by @${author}</small>
-    // `);
-
-    this.speak(`
-      <p>${slang}</p>
-    `);
-
+    this.randomSlang();
+    this.speak(this.slang, this.voice);
     setTimeout(() => this.stopSpeaking(), this.slangMilliseconds);
+  }
+  randomSlang() {
+    this.slang = this.slangs[Math.floor(Math.random() * this.slangs.length)].innerHTML;
   }
   update() {
     if (this.isSpeaking) {
