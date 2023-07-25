@@ -6,9 +6,29 @@ h1, .h1
 h2, .h2
     color: $color-accent
 
-h3, .h3
-    font-style: italic
-    font-weight: normal
+a
+    text-underline-offset: 0.15em !important
+.content,
+.block-content
+    i
+        display: block
+        font-size: px2rem(35)
+        padding: px2rem(40) 0 
+        line-height: px2rem(40)
+        position: relative
+        &::after,
+        &::before
+            font-size: px2rem(70)
+            line-height: px2rem(70)
+            display: block
+            position: absolute
+            left: px2rem(-8)
+        &::after,
+            content: "”"
+            bottom: px2rem(-30)
+        &::before
+            content: "“"
+            top: px2rem(10)
 
 header#document-header
     position: relative
@@ -36,7 +56,13 @@ header#document-header
             .lead
                 font-style: italic
                 text-align: center
-
+                @include media-breakpoint-up(xxl)
+                    width: col(10)
+                    padding-left: offset(2)
+                    margin-bottom: $spacing4
+                @include in-page-with-sidebar
+                    margin-bottom: $spacing4
+ 
 .breadcrumb-nav
     display: none
 
@@ -52,13 +78,19 @@ header#document-header
             .block-title
                 text-transform: none
                 font-weight: bold
-        &-call_to_action 
-            .call_to_action 
+        &-call_to_action
+            .call_to_action
                 .description
+                    a
+                        text-decoration-color: $color-border
+                        &:hover
+                            text-decoration-color: $color-text
                     p
-                        @include lead-hero
+                        font-size: px2rem(28)
                         font-weight: normal
                         margin: 0
+                        @include media-breakpoint-down(desktop)
+                            font-size: px2rem(22)
         &-partners
             .top
                 margin: 0
