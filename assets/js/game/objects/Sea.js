@@ -1,6 +1,6 @@
 import Thing from "./Thing";
 import { WORLD } from "../data/world";
-import { game } from "js/Game";
+import { game } from "js/game/MainGame";
 
 export default class Sea {
   constructor() {

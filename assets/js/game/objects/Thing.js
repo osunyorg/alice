@@ -1,4 +1,4 @@
-import { game } from "js/Game";
+import { game } from "js/game/MainGame";
 
 export default class Thing {
 

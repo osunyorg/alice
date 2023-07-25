@@ -1,4 +1,4 @@
-import { game } from "js/Game";
+import { game } from "js/game/MainGame";
 import Thing from "./Thing";
 import SpeakingThing from "./SpeakingThing";
 

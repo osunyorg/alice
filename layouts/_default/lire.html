@@ -1,35 +1,79 @@
 {{ define "main" }}
+  {{ $cities := site.GetPage "/pages/villes"}}
   {{ partial "pages/hero.html" . }}
 
   <div class="document-content">
+    {{- partial "toc/cta" -}}
+
+    <div class="toc-container" aria-hidden="false" aria-labelledby="toc-title">
+      <div class="toc-content">
+        {{/* TODO : quelle balise pour le titre du toc ? */}}
+        <div id="toc-title" class="toc-title">{{ i18n "commons.toc" }}</div>
+        <nav class="toc toc-pages" id="nav-toc" aria-labelledby="toc-title">
+          <ol>
+            {{ with $cities }}
+              {{ range .Pages }}
+                <li><a href="#{{ urlize .Title }}">{{ .Title }}</a></li>
+              {{ end }}
+            {{ end }}
+            <li><a href="#definitions">Définitions</a></li>
+            <li><a href="#trolls">Trolls</a></li>
+          </ol>
+        </nav>
+        <button name="{{ i18n "commons.close" }}">{{ i18n "commons.close" }}</button>
+      </div>
+    </div>
+
     <div class="blocks">
-      {{ with site.GetPage "/pages/villes" }}
+      {{ with $cities }}
         {{ range .Pages }}
-          <div class="heading container" id="">
+          <div class="heading container" id="{{ urlize .Title }}">
             <h2>{{ .Title }}</h2>
           </div>
-          <h3>{{ .Params.summary }}</h3>
-          {{ partial "commons/image.html"
-            (dict
-              "image"    .Params.image
-              "sizes"    site.Params.image_sizes.design_system.hero
-              "lazy"     true
-            ) }}
+          <div class="block block-summary">
+            <div class="container">
+              <div class="block-content">
+                <p class="lead" role="heading" aria-level="3">{{ .Params.summary }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="block block-image">
+            <div class="container">
+              <div class="block-content">
+                <figure>
+                  {{ partial "commons/image.html"
+                      (dict
+                        "image"    .Params.image
+                        "sizes"    site.Params.image_sizes.design_system.hero
+                        "lazy"     true
+                      ) }}
+                </figure>
+              </div>
+            </div>
+          </div>
           {{ partial "contents/list.html" . }}
         {{ end }}
       {{ end }}
       {{ with site.GetPage "/pages/definitions" }}
-        <div class="heading container" id="">
+        <div class="heading container" id="definitions">
           <h2>{{ .Title }}</h2>
         </div>
         {{ partial "contents/list.html" . }}
       {{ end }}
       {{ with site.GetPage "/pages/trolls" }}
         <section class="trolls">
-          <div class="heading container" id="">
+          <div class="heading container" id="trolls">
             <h2>{{ .Title }}</h2>
           </div>
-          <p>{{ .Params.summary }}</p>
+
+          <div class="block block-summary">
+            <div class="container">
+              <div class="block-content">
+                <p class="lead" role="heading" aria-level="3">{{ .Params.summary }}</p>
+              </div>
+            </div>
+          </div>
+
           {{ partial "contents/list.html" . }}
         </section>
       {{ end }}
