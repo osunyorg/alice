@@ -71,12 +71,14 @@ header#document-header
         display: none
 .page__home
     @include media-breakpoint-up(desktop)
-    .block-chapter
-        text-align: center
-        .chapter
-            justify-content: center
-            .block-title
-                margin-bottom: $spacing2
+        .block-partners
+            margin-top: $spacing4
+        .block-chapter
+            text-align: center
+            .chapter
+                justify-content: center
+                .block-title
+                    margin-bottom: $spacing2
 .blocks
     .block
         .top
@@ -126,6 +128,9 @@ header#document-header
                         display: none
 #document-footer
     @include media-breakpoint-up(desktop)
+        .container + .container
+            text-align: center
+            justify-content: center
         .nav-legal
             li
                 display: inline
