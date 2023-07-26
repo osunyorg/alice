@@ -12,7 +12,9 @@
   </head>
   <body class="{{ partial "GetBodyclass" . }}">
       <div class="screen game" id="game">
-        <div class="sea"></div>
+        <div class="sea">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="definitions">
           {{ with site.GetPage "/pages/definitions" }}
             <ul>
@@ -38,6 +40,7 @@
             {{ with site.GetPage "/pages/villes" }}
               {{ range .Pages }}
                 <li class="popin popin--offcanvas" id="{{ .Params.slug }}">
+                  <button class="close"></button>
                   <div class="city">
                     {{ partial "commons/image.html"
                       (dict
@@ -50,7 +53,6 @@
                       <h3>{{ .Params.summary }}</h3>
                       {{ partial "blocks/list" . }}
                     </div>
-                    <a class="close"></a>
                   </div>
                 </li>
               {{ end }}

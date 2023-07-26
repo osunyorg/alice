@@ -3,7 +3,7 @@ export class Popin {
     this.element = element;
     this.isOpened = false;
     this.isOffcanvas = this.element.classList.contains('popin--offcanvas')
-    
+
     this.classes = {
       opened: "is-opened",
       bodyOpened: this.isOffcanvas ? "offcanvas-is-opened" : "popin-is-opened",
@@ -14,10 +14,15 @@ export class Popin {
     if(this.buttonClose) this.buttonClose.addEventListener('click', this.close.bind(this));
   }
   open() {
-    this.element.classList.add(this.classes.opened);
-    document.body.classList.add(this.classes.bodyOpened);
+    this.element.style.display = "flex";
     this.element.scrollTo(0, 0);
     this.isOpened = true;
+
+    setTimeout(() => {
+      this.element.classList.add(this.classes.opened);
+    }, 10);
+
+    document.body.classList.add(this.classes.bodyOpened);
   }
   close() {
     if (!this.isOpened) return;
@@ -28,7 +33,8 @@ export class Popin {
     document.body.classList.remove(this.classes.bodyOpened);
     document.body.classList.add(this.classes.bodyClosing);
     setTimeout(() => {
-        document.body.classList.remove(this.classes.bodyClosing);
+      this.element.style.display = "none";
+      document.body.classList.remove(this.classes.bodyClosing);
     }, 400);
   }
 }

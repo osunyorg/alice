@@ -12,6 +12,9 @@
         transition: all 200ms
         text-decoration: none
         text-align: center
+        border: 0
+        background: none
+        appearance: none
         @include icon-block('close')
 
     .popin
@@ -28,19 +31,27 @@
             left: 0
             right: 0
             bottom: 0
-        &.is-opened
-            display: flex
+        .close
+            position: fixed
+            background: white
+            width: 60px
+            height: 60px
+            z-index: 10
+        &:not(.popin--offcanvas)
             max-width: 600px
+            transition: 0.4s transform
+            transform: translateY(120%)
+            &.is-opened
+                transform: translateY(0)
         &--offcanvas
             background: white
-            overflow-y: auto
             inset: 0px
             &.is-opened
                 display: block
             @include media-breakpoint-down(desktop)
-                display: none
+                transform: translateX(100%)
                 &.is-opened
-                    display: block
+                    transform: translateX(0)
             @include media-breakpoint-up(desktop)
                 display: block
                 max-width: 600px

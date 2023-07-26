@@ -2,6 +2,8 @@
     .city
         background-color: $color-background
         padding: half($grid-gutter-sm)
+        height: 100%
+        overflow-y: auto
         @include media-breakpoint-up(md)
             padding: $grid-gutter
         .content > *
@@ -13,5 +15,3 @@
             display: block
         .h1
             text-align: left
-        .close
-            position: fixed

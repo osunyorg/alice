@@ -48,9 +48,6 @@ export class Game {
     this.camera.x = -this.scene.hero.x - this.scene.hero.width / 2 + this.width / 2;
     this.camera.y = -this.scene.hero.y - this.scene.hero.height / 2 + this.height / 2;
 
-    // var r = document.querySelector(':root');
-    // r.style.setProperty('--sea-offset', `${this.camera.x + this.tick*0.2}px ${this.camera.y + Math.sin(this.tick * 0.01)*4}px`);
-    // r.style.setProperty('--sea-offset-2', `${this.camera.x}px ${this.camera.y + Math.cos(this.tick * 0.01)*4}px`);
     this.canvas.style.backgroundPosition = `${this.camera.x}px ${this.camera.y}px`;
   }
   drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {
