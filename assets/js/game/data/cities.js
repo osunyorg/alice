@@ -30,7 +30,7 @@ export const CITIES = [
         name: 'Eglise de la sainte crypto',
         src: '/assets/images/jouer/cities/eglise-sainte-crypto.png',
         x: 500,
-        y: 630,
+        y: 600,
         srcWidth: 371,
         srcHeight: 429,
     },

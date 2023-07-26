@@ -11,13 +11,13 @@ export const COINS = [
     },
     {
         id: 'carte-graphique',
-        x: 1440,
-        y: 660
+        x: 1540,
+        y: 700
     },
     {
         id: 'crypto-bro',
         x: 750,
-        y: 800
+        y: 600
     },
     {
         id: 'crypto-monnaie',
@@ -26,7 +26,7 @@ export const COINS = [
     },
     {
         id: 'crypto-troll',
-        x: 250,
+        x: 300,
         y: 250
     },
     {
@@ -36,7 +36,7 @@ export const COINS = [
     },
     {
         id: 'ethereum',
-        x: 350,
+        x: 380,
         y: 600,
     },
     {
@@ -51,7 +51,7 @@ export const COINS = [
     },
     {
         id: 'minting',
-        x: 1650,
+        x: 1750,
         y: 600,
     },
     {
@@ -77,12 +77,12 @@ export const COINS = [
     {
         id: 'pos-proof-of-stake',
         x: 2000,
-        y: 100,
+        y: 120,
     },
     {
         id: 'pow-proof-of-work',
         x: 1800,
-        y: 450,
+        y: 200,
     },
     {
         id: 'satoshi-nakamoto',
@@ -92,11 +92,11 @@ export const COINS = [
     {
         id: 'smart-contract',
         x: 1070,
-        y: 850,
+        y: 800,
     },
     {
         id: 'stablecoin',
-        x: 130,
+        x: 150,
         y: 550,
     },
     {
