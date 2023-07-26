@@ -2,7 +2,7 @@
 
 export const CITIES = [
     {
-        id: 'kryptogarden',
+        id: 'kryptogarten',
         src: '/assets/images/cities/kryptogarten.png',
         x: 60,
         y: 680,

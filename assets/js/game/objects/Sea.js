@@ -16,7 +16,7 @@ export default class Sea {
       console.log(this.texture.width, this.texture.height);
     });
 
-    this.texture.src = '/assets/images/sea.gif';
+    // this.texture.src = '/assets/images/sea.gif';
   }
   draw() {
     // game.ctx.fillStyle = this.pattern;

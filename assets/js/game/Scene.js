@@ -24,7 +24,7 @@ export default class Scene {
     this.addAlice();
     this.addCities();
     this.addTrolls();
-    this.addSea();
+    // this.addSea();
     this.elements = [
       ...this.cities, 
       ...this.trolls,
@@ -84,7 +84,7 @@ export default class Scene {
     });
   }
   update() {
-    this.sea.update();
+    // this.sea.update();
     this.map.update();
     this.coins.forEach(coin => coin.update());
     this.elements.sort((a, b) => (a.y + a.depthOffset) - (b.y + b.depthOffset))

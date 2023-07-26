@@ -3,10 +3,11 @@ import Thing from "./Thing";
 
 export default class Coin extends Thing {
   constructor(data) {
-    data.src = "/assets/images/coin/coin.png";
-    data.srcHeight = data.srcWidth = 160;
+    data.src = "/assets/images/jouer/bitcoin.png";
+    data.srcWidth = 80;
+    data.srcHeight = 48;
     data.width = 40;
-    data.height = 40;
+    data.height = 24;
 
     super(data);
 
