@@ -11,7 +11,7 @@ export default class Hero extends Character {
       height: 150 * WORLD.characters.scale,
       srcWidth: 256,
       srcHeight: 300,
-      src: '/assets/webp/characters/alice.webp',
+      src: '/assets/images/jouer/characters/alice.webp',
       animations: {
         idle: {
           steps: 8,
