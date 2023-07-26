@@ -69,7 +69,14 @@ header#document-header
 .toc-content
     .toc-title
         display: none
-
+.page__home
+    @include media-breakpoint-up(desktop)
+    .block-chapter
+        text-align: center
+        .chapter
+            justify-content: center
+            .block-title
+                margin-bottom: $spacing2
 .blocks
     .block
         .top
@@ -92,14 +99,31 @@ header#document-header
                             font-size: px2rem(22)
                 img
                     border-radius: 5px
+            &:nth-of-type(even)
+                .call_to_action--with-image
+                    @include media-breakpoint-up(desktop)
+                        align-items: center
+                        > div
+                            order: 1
+                            grid-column: 8/13
+                        > picture
+                            order: -1
+                            grid-column: 1/6
+                
         &-partners
             .top
                 margin: 0
-            .organization
-                .media
-                    background: none
-                h3
-                    display: none
+                text-align: center
+            .organizations
+                display: flex
+                align-items: center
+                justify-content: center
+                .organization
+                    max-width: 230px
+                    .media
+                        background: none
+                    h3
+                        display: none
 #document-footer
     @include media-breakpoint-up(desktop)
         .nav-legal
