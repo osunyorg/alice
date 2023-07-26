@@ -5,7 +5,7 @@ removePathAccents: true
 deployment:
   targets:
     - name: "production"
-      URL: "s3://a3e3bc44ebeb3b3deab2b30e5c68f97a65beaccb80746784e4f41e103cecfea8?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage"
+      URL: "s3://758fda1998d701ad3f8bfa3a22b53475bedc9a3501c4323f657b256d0939db7d?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage"
 params:
   plausible: aliceaupaysdescryptos.org
   logo:
