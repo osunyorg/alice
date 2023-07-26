@@ -1,0 +1,45 @@
+.page__page.lire
+    .heading
+        margin-top: $spacing4
+    .block-summary
+        margin-top: $spacing0
+    .block-image
+        img
+            max-width: 400px
+    .trolls
+        .blocks
+            .block
+                &:nth-child(odd)
+                    .chapter
+                        align-items: end
+                        .text
+                            &::after
+                                border-width: 10px 10px 0 0
+                                left: auto                         
+                                right: 100px
+                .chapter
+                    flex-direction: column-reverse
+                    align-items: start
+                    margin-bottom: -200px
+                    .text
+                        background: black
+                        position: relative
+                        color: white
+                        max-width: 400px
+                        padding: 15px 20px 20px 
+                        text-align: center
+                        z-index: 2
+                        &::after
+                            content: ''
+                            width: 0
+                            height: 0
+                            border-style: solid
+                            border-width: 10px 0 0 10px
+                            border-color: black transparent transparent transparent
+                            position: absolute
+                            top: 100%
+                            left: 100px
+                    figure
+                        z-index: 1
+                        img
+                            max-width: 300px
