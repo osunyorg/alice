@@ -3,7 +3,7 @@
 export const CITIES = [
     {
         id: 'kryptogarten',
-        src: '/assets/images/cities/kryptogarten.png',
+        src: '/assets/images/jouer/cities/kryptogarten.png',
         x: 60,
         y: 680,
         srcWidth: 401,
@@ -11,7 +11,7 @@ export const CITIES = [
     },
     {
         id: 'crypto-university',
-        src: '/assets/images/cities/crypto-university.png',
+        src: '/assets/images/jouer/cities/crypto-university.png',
         x: 1440,
         y: 460,
         srcWidth: 376,
@@ -19,7 +19,7 @@ export const CITIES = [
     },
     {
         id: 'la-mine-de-blocs',
-        src: '/assets/images/cities/mine-de-bloc.png',
+        src: '/assets/images/jouer/cities/mine-de-bloc.png',
         x: 1300,
         y: 150,
         srcWidth: 366,
@@ -28,7 +28,7 @@ export const CITIES = [
     {
         id: 'eglise-de-la-sainte-crypto',
         name: 'Eglise de la sainte crypto',
-        src: '/assets/images/cities/eglise-sainte-crypto.png',
+        src: '/assets/images/jouer/cities/eglise-sainte-crypto.png',
         x: 500,
         y: 630,
         srcWidth: 371,
@@ -36,7 +36,7 @@ export const CITIES = [
     },
     {
         id: 'libertaria',
-        src: '/assets/images/cities/libertaria.png',
+        src: '/assets/images/jouer/cities/libertaria.png',
         x: 2140,
         y: 450,
         srcWidth: 391,
@@ -44,7 +44,7 @@ export const CITIES = [
     },
     {
         id: 'le-dome-du-tonnerre',
-        src: '/assets/images/cities/dome-tonnerre.png',
+        src: '/assets/images/jouer/cities/dome-tonnerre.png',
         x: 2050,
         y: 200,
         srcWidth: 265,
@@ -52,7 +52,7 @@ export const CITIES = [
     },
     {
         id: 'self-made-city',
-        src: '/assets/images/cities/self-made-city.png',
+        src: '/assets/images/jouer/cities/self-made-city.png',
         x: 350,
         y: 300,
         srcWidth: 381,
@@ -60,7 +60,7 @@ export const CITIES = [
     },
     {
         id: 'bankochain',
-        src: '/assets/images/cities/bankochain.png',
+        src: '/assets/images/jouer/cities/bankochain.png',
         x: 1000,
         y: 600,
         srcWidth: 306,
@@ -68,7 +68,7 @@ export const CITIES = [
     },
     {
         id: 'mordor-club',
-        src: '/assets/images/cities/mordor-club.png',
+        src: '/assets/images/jouer/cities/mordor-club.png',
         x: 2160,
         y: -60,
         srcWidth: 375,
@@ -76,7 +76,7 @@ export const CITIES = [
     },
     {
         id: 'cimetiere-du-nft',
-        src: '/assets/images/cities/cimetiere-du-nft.png',
+        src: '/assets/images/jouer/cities/cimetiere-du-nft.png',
         x: 1600,
         y: 160,
         srcWidth: 387,
