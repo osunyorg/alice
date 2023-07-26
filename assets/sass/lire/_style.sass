@@ -5,7 +5,10 @@
         margin-top: $spacing0
     .block-image
         img
-            max-width: 400px
+            @include media-breakpoint-up(desktop)
+                max-width: 400px
+            @include media-breakpoint-down(desktop)
+                padding: 0 $spacing2
     .trolls
         .blocks
             .block
@@ -29,8 +32,7 @@
                         padding: 15px 20px 20px 
                         text-align: center
                         z-index: 2
-                        @include media-breakpoint-up(desktop)
-                            max-width: 400px
+                        max-width: 400px
                         &::after
                             content: ''
                             width: 0
@@ -44,4 +46,7 @@
                     figure
                         z-index: 1
                         img
-                            max-width: 300px
+                            @include media-breakpoint-up(desktop)
+                                max-width: 300px
+                            @include media-breakpoint-down(desktop)
+                                padding: 0
