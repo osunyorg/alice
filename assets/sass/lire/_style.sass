@@ -20,7 +20,8 @@
                 .chapter
                     flex-direction: column-reverse
                     align-items: start
-                    margin-bottom: -200px
+                    @include media-breakpoint-up(desktop)
+                        margin-bottom: -200px
                     .text
                         background: black
                         position: relative
