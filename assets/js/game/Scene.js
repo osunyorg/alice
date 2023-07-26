@@ -7,7 +7,6 @@ import City from './objects/City';
 import Map from './objects/Map';
 import Troll from './objects/Troll';
 import Coin from './objects/Coin';
-import Sea from './objects/Sea';
 
 export default class Scene {
   constructor(game) {
@@ -24,7 +23,6 @@ export default class Scene {
     this.addAlice();
     this.addCities();
     this.addTrolls();
-    // this.addSea();
     this.elements = [
       ...this.cities, 
       ...this.trolls,
@@ -43,9 +41,6 @@ export default class Scene {
         matrice.push(newline);
     });
     console.log(matrice);
-  }
-  addSea() {
-    this.sea = new Sea();
   }
   addCoins() {
     COINS.forEach((coin, index) => {
@@ -84,7 +79,6 @@ export default class Scene {
     });
   }
   update() {
-    // this.sea.update();
     this.map.update();
     this.coins.forEach(coin => coin.update());
     this.elements.sort((a, b) => (a.y + a.depthOffset) - (b.y + b.depthOffset))
