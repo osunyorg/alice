@@ -25,16 +25,10 @@ body
 @page:first
     margin-left: 25mm
     margin-right: 20mm
-    @bottom-left
-        content: none
-    @bottom-right
-        content: none
+    @include unpaginated
 
 @page:blank
-    @bottom-left
-        content: none
-    @bottom-right
-        content: none
+    @include unpaginated
 
 @page:left
     margin-left: 25mm
@@ -45,9 +39,5 @@ body
     margin-right: 25mm
     @include paginated
 
-
 @page:nth(3)
-    @include unpaginated
-
-@page:nth(7)
     @include unpaginated
