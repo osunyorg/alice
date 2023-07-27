@@ -117,15 +117,16 @@ header#document-header
                 margin: 0
                 text-align: center
             .organizations
-                display: flex
-                align-items: center
-                justify-content: center
                 .organization
                     max-width: 230px
                     .media
                         background: none
                     h3
                         display: none
+                @include media-breakpoint-up(desktop)
+                    display: flex
+                    align-items: center
+                    justify-content: center
 #document-footer
     @include media-breakpoint-up(desktop)
         .container + .container
