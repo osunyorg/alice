@@ -25,16 +25,6 @@
         {{ end }}
       </section>
     {{ end }}
-    <section class="intro">
-      {{ with site.GetPage "/credits" }}
-        <h2>{{ .Title }}</h2>
-        {{ range .Params.contents }}
-          {{ if eq .template "chapter" }}
-            {{ partial "PrepareHTML" .data.text }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </section>
     {{ with site.GetPage "/pages/villes" }}
       {{ range .Pages }}
         <section class="city">
@@ -79,11 +69,12 @@
         {{ end }}
       </section>
     {{ end }}
-    <section class="blank"></section>
     <section class="last-page">
       {{ with site.GetPage "/" }}
-        {{ with index (last 1 .Params.contents) 0}}
-          {{ partial "PrepareHTML" .data.text }}
+        {{ range .Params.contents }}
+          {{ if eq .template "chapter" }}
+            {{ partial "PrepareHTML" .data.text }}
+          {{ end }}
         {{ end }}
       {{ end }}
       <div class="isbn">
