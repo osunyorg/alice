@@ -9,11 +9,10 @@ export default class City extends SpeakingThing {
       width: 70,
       height: 70,
       x: 50,
-      y: 25
+      y: 100
     }
 
-    data.width = data.srcWidth * WORLD.cities.scale;
-    data.height = data.srcHeight * WORLD.cities.scale;
+    data.scale = WORLD.cities.scale;
 
     super(data);
 
@@ -23,9 +22,25 @@ export default class City extends SpeakingThing {
     this.canCollide = true;
     this.isCollided = false;
     this.wasCollided = false;
-
+    
     this.dialog.classList.add('game-dialog--action');
     this.dialog.addEventListener('click', () => this.openPopin());
+
+   this.setImageFromDom();
+  }
+
+  setImageFromDom() {
+    const image = document.querySelector(`#${this.data.id} img`);
+    if (!image) {
+      return;
+    }
+    if (image.complete) {
+      this.src = image.currentSrc;
+    } else {
+      image.addEventListener('load', () => {
+        this.src = image.currentSrc;
+      })
+    }
   }
 
   onCollide() {

@@ -27,7 +27,6 @@ class UI {
     this.popins[id].close();
   }
   collectCoin(id) {
-    console.log("collect")
     this.coinsPicked += 1;
     document.getElementById('sound-coin').play();
     this.closePopin(id)

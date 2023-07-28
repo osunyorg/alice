@@ -8,7 +8,24 @@ export default class Thing {
       y : this.y + game.camera.y
     }
   }
-  constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null}) {
+
+  set src (source) {
+    this.image = new Image();
+    this.image.addEventListener('load', () => {
+      if(!this.srcWidth || !this.srcHeight) {
+        this.srcWidth = this.image.width;
+        this.srcHeight = this.image.height;
+      }
+
+      if (!this.width && !this.height && this.scale) {
+        this.width = this.srcWidth * this.scale;
+        this.height = this.srcHeight * this.scale;
+      }
+    });
+    this.image.src = source;
+    this.ready = true
+  }
+  constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null}) {
     this.x = x || 0;
     this.y = y || 0;
     this.width = width;
@@ -16,9 +33,9 @@ export default class Thing {
     this.srcWidth = srcWidth;
     this.srcHeight = srcHeight;
     this.hitbox = hitbox || { width, height, x: 0, y: 0 };
-    this.src = src;
     this.ready = this.src ? true : false;
     this.depthOffset = 0;
+    this.scale = scale;
 
     // Collisions
     this.canCollide = true;
@@ -30,13 +47,8 @@ export default class Thing {
       y: this.y - this.height / 2
     }
 
-    if (this.src) {
-      this.image = new Image();
-      this.image.src = this.src;
-      // this.image.addEventListener('load', () => {
-      //   this.ready = true
-      // });
-      this.ready = true
+    if (src) {
+      this.src = src;
     }
   }
 

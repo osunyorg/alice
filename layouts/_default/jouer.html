@@ -41,9 +41,11 @@
                   <div class="city">
                     {{ partial "commons/image.html"
                       (dict
-                        "image"    .Params.image
-                        "sizes"    site.Params.image_sizes.design_system.hero
-                        "lazy"     false
+                        "image" .Params.image
+                        "sizes" (dict "mobile" "220"
+                                      "tablet" "220"
+                                      "desktop" "220")
+                        "lazy"  false
                       ) }}
                     <div class="content">
                       <h2 class="h1">{{ .Title }}</h2>
