@@ -63,7 +63,7 @@ export default class Troll extends Character {
     }
 
     if (x || y) {
-      this.setAnimation(x > this.x ? "walk" : "reversedWalk");
+      this.setAnimation(x > 0 ? "walk" : "reversedWalk");
       x = this.x + x * this.speed;
       y = this.y + y * this.speed;
       this.move(x, y);
