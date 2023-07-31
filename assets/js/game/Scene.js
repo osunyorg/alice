@@ -32,8 +32,7 @@ export default class Scene {
       this.hero
     ]
     const popinEndElement = document.getElementById('popin-end');
-    const popinEnd = new Popin(popinEndElement);
-    popinEnd.open();
+    this.popinEnd = new Popin(popinEndElement); 
   }
   doubleMatrix() {
     let matrice = [];
@@ -50,7 +49,7 @@ export default class Scene {
   }
   addCoins() {
     COINS.forEach((coin, index) => {
-      this.coins.push(new Coin({...coin, index}));
+      this.coins.push(new Coin({...coin, index, collected: false}));
     });
   }
   addAlice() {
@@ -88,12 +87,20 @@ export default class Scene {
     return this.coins.every(coin => coin.collected);
   }
   checkAndDisplayPopin() {
-    console.log('checkAndDisplayPopin');
-    console.log('All coins collected:', this.checkAllCoinsCollected()); // Vérifiez la valeur de retour
     if (this.checkAllCoinsCollected()) {
-      this.popinEnd.open();
+      const ui = new UI();
+      ui.openPopin('popin-end', true);
     }
   }
+  collectCoin(id) {
+    this.coinsPicked += 1;
+    document.getElementById('sound-coin').play();
+    this.closePopin(id);
+    this.update();
+    this.coins[id].collected = true; 
+    this.checkAndDisplayPopin();
+  }
+  
   update() {
     this.map.update();
     this.coins.forEach(coin => coin.update());
