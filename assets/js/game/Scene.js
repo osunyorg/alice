@@ -2,11 +2,14 @@ import {CITIES} from './data/cities';
 import {TROLLS} from './data/trolls';
 import {WORLD} from './data/world';
 import {COINS} from './data/coins';
+import { Popin } from "./ui/Popin";
 import Hero from './objects/Hero';
 import City from './objects/City';
 import Map from './objects/Map';
 import Troll from './objects/Troll';
 import Coin from './objects/Coin';
+import UI from'./UI';
+
 
 export default class Scene {
   constructor(game) {
@@ -28,6 +31,9 @@ export default class Scene {
       ...this.trolls,
       this.hero
     ]
+    const popinEndElement = document.getElementById('popin-end');
+    const popinEnd = new Popin(popinEndElement);
+    popinEnd.open();
   }
   doubleMatrix() {
     let matrice = [];
@@ -78,11 +84,22 @@ export default class Scene {
       }
     });
   }
+  checkAllCoinsCollected() {
+    return this.coins.every(coin => coin.collected);
+  }
+  checkAndDisplayPopin() {
+    console.log('checkAndDisplayPopin');
+    console.log('All coins collected:', this.checkAllCoinsCollected()); // Vérifiez la valeur de retour
+    if (this.checkAllCoinsCollected()) {
+      this.popinEnd.open();
+    }
+  }
   update() {
     this.map.update();
     this.coins.forEach(coin => coin.update());
     this.elements.sort((a, b) => (a.y + a.depthOffset) - (b.y + b.depthOffset))
     this.elements.forEach(element => element.update());
     this.checkCollision();
+    this.checkAndDisplayPopin();
   }
 }
