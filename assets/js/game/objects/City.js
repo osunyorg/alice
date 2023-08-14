@@ -9,7 +9,7 @@ export default class City extends SpeakingThing {
       width: 70,
       height: 70,
       x: 50,
-      y: 100
+      y: 0
     }
 
     data.scale = WORLD.cities.scale;
@@ -35,12 +35,18 @@ export default class City extends SpeakingThing {
       return;
     }
     if (image.complete) {
-      this.src = image.currentSrc;
+      this.setImage(image);
     } else {
       image.addEventListener('load', () => {
-        this.src = image.currentSrc;
+        this.setImage(image);
       })
     }
+  }
+
+  setImage(image) {
+    this.src = image.currentSrc;
+    this.hitbox.height = image.height / 8
+    this.hitbox.y = image.height / 2
   }
 
   onCollide() {

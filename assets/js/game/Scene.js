@@ -40,7 +40,6 @@ export default class Scene {
         matrice.push(newline);
         matrice.push(newline);
     });
-    console.log(matrice);
   }
   addCoins() {
     COINS.forEach((coin, index) => {

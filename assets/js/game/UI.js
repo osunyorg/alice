@@ -8,6 +8,8 @@ class UI {
     document.querySelectorAll('.popin').forEach(element => {
       this.popins[element.id] = new Popin(element);
     });
+
+    console.log(this.popins)
     this.coinsContainer = document.querySelector('.coins');
     this.coinsPicked = 0;
     this.coinsTotal = document.querySelectorAll('.definitions .definition').length;
@@ -31,6 +33,11 @@ class UI {
     document.getElementById('sound-coin').play();
     this.closePopin(id)
     this.update();
+    if (this.coinsTotal === this.coinsPicked) {
+      const url = window.trollImages[Math.floor(Math.random() * window.trollImages.length)];
+      document.getElementById('gift-url').href = url;
+      this.openPopin('game-end');
+    }
   }
   update() {
     document.querySelector('.coins__picked').innerHTML = this.coinsPicked;

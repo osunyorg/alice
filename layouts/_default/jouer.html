@@ -59,12 +59,34 @@
           </ul>
         </div>
 
-        <div class="trolls">
-          {{ with site.GetPage "/pages/trolls" }}
-            {{ range $index, $troll := .Params.contents }}
-              {{ partial "PrepareHTML" $troll.data.text }}
+        <script>
+          window.trollDialogs = [
+            {{ with site.GetPage "/pages/trolls" }}
+              {{ range $index, $troll := .Params.contents }}
+                "{{ partial "PrepareText" $troll.data.text }}",
+              {{ end }}
             {{ end }}
-          {{ end }}
+          ];
+          window.trollImages = [
+            {{ $troll_image := "" }}
+            {{ with site.GetPage "/pages/trolls" }}
+              {{ range $index, $troll := .Params.contents }}
+                {{- $troll_image = partial "GetImageUrl" (dict
+                  "media" (partial "GetMedia" $troll.data.image.id)
+                  "size" "1200"
+                ) -}}
+                "{{ $troll_image }}",
+              {{ end }}
+            {{ end }}
+          ];
+        </script>
+
+        <div class="popin popin--end" id="game-end">
+          <h3>Bravo !</h3>
+          <p>Tu es désormais un•e as des cryptomonnaies !</p>
+          <p>Clique ici pour télécharger ta propre NFT pour commencer ta carrière de spéculateur professionnel.</p>
+          <a href="{{ $troll_image }}" target="_blank" rel="noopener" id="gift-url" download="alice-et-les-cryptotrolls.png" class="link-btn icon">Télécharger le NFT</a>
+          <button class="close"></button>
         </div>
     
         <div class="game-ui">

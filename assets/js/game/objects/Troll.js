@@ -35,7 +35,7 @@ export default class Troll extends Character {
     this.voice = data.voice
 
     this.isSpeaking = false;
-    this.slangs = document.querySelectorAll('.trolls p');
+    this.slangs = window.trollDialogs;
     this.slang = "";
     this.slangMilliseconds = 5000;
 
@@ -78,7 +78,7 @@ export default class Troll extends Character {
     setTimeout(() => this.stopSpeaking(), this.slangMilliseconds);
   }
   pickRandomSlang() {
-    this.slang = this.slangs[Math.floor(Math.random() * this.slangs.length)].innerHTML;
+    this.slang = this.slangs[Math.floor(Math.random() * this.slangs.length)];
   }
   update() {
     if (this.isSpeaking) {

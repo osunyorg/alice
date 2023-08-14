@@ -91,8 +91,8 @@ export const COINS = [
     },
     {
         id: 'smart-contract',
-        x: 1070,
-        y: 800,
+        x: 1200,
+        y: 780,
     },
     {
         id: 'stablecoin',
