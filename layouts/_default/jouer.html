@@ -37,7 +37,7 @@
             {{ with site.GetPage "/pages/villes" }}
               {{ range .Pages }}
                 <li class="popin popin--offcanvas" id="{{ .Params.slug }}">
-                  <button class="close"></button>
+                  <button class="close" title="Fermer"></button>
                   <div class="city">
                     {{ partial "commons/image.html"
                       (dict
@@ -90,7 +90,7 @@
             Il y en a plein, donc tu vas pouvoir les partager avec tes amis, ou les collectionner toutes (oui, comme les Pokemon ou les cartes Magic).
           </p>
           <a href="{{ $troll_image }}" target="_blank" rel="noopener" id="gift-url" download="alice-et-les-cryptotrolls.png" class="link-btn icon">Télécharger</a>
-          <button class="close"></button>
+          <button class="close" title="Fermer"></button>
         </div>
     
         <div class="game-ui">
