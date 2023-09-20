@@ -20,7 +20,9 @@ export class Game {
       y: 0
     }
   }
-  setup() {
+  setup(imageExtension) {
+    this.imageExtension = imageExtension
+
     this.canvas = document.createElement('canvas');
     this.ctx = this.canvas.getContext('2d');
     this.container.appendChild(this.canvas);

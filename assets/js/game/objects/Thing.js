@@ -1,4 +1,5 @@
 import { game } from "js/game/MainGame";
+import settings from "../data/settings";
 
 export default class Thing {
 
@@ -11,7 +12,7 @@ export default class Thing {
 
   set src (source) {
     this.image = new Image();
-    this.image.addEventListener('load', () => {
+    this.image.addEventListener('load', (event) => {
       if(!this.srcWidth || !this.srcHeight) {
         this.srcWidth = this.image.width;
         this.srcHeight = this.image.height;
@@ -21,9 +22,10 @@ export default class Thing {
         this.width = this.srcWidth * this.scale;
         this.height = this.srcHeight * this.scale;
       }
+      this.ready = true
     });
-    this.image.src = source;
-    this.ready = true
+
+    this.image.src = source.replace('.png', settings.extension);
   }
   constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null}) {
     this.x = x || 0;
