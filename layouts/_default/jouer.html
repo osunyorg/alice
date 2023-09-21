@@ -23,7 +23,9 @@
                       {{ with .data}}
                         {{ safeHTML .text  }}
                       {{ end }}
-                      <a class="pick">Ramasser</a>
+                      <div class="action">
+                        <button class="pick">Ramasser</button>
+                      </div>
                     </article>
                   </li>
                 {{ end }}
