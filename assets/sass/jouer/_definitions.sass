@@ -35,6 +35,11 @@
         max-height: 70vh
         overflow-y: auto
         border-bottom: 4rem solid black
+        .pick, a
+            color: inherit
+            text-decoration: underline
+            text-decoration-color: rgba(255, 255, 255, 0.7)
+            text-underline-offset: 0.3rem !important
         .action
             background: black
             bottom: 0
@@ -48,13 +53,9 @@
                 align-items: center
                 background: none
                 border: none
-                color: inherit
                 cursor: pointer
                 display: flex
                 float: right
-                text-decoration: underline
-                text-decoration-color: rgba(255, 255, 255, 0.7)
-                text-underline-offset: 0.3rem !important
                 &::after
                     animation: bitcoin-shake 2.7s infinite
                     content: ''
