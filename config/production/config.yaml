@@ -6,3 +6,8 @@ baseURL: https://www.aliceetlescryptotrolls.org
 defaultContentLanguage: fr
 defaultContentLanguageInSubdir: false
 
+## DEUXFLEURS
+deployment:
+  targets:
+    - name: "production"
+      URL: "s3://www.aliceetlescryptotrolls.org?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage"
