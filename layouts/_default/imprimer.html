@@ -18,6 +18,7 @@
         <img src="/assets/images/imprimer/alice.png">
         <h1>Alice et les <br>crypto-trolls</h1>
       </section>
+      <section class="blank"></section>
       <section class="intro">
         <h2>{{ .Params.summary }}</h2>
         {{ with index .Params.contents 0 }}
@@ -69,6 +70,7 @@
         {{ end }}
       </section>
     {{ end }}
+    <section class="blank"></section>
     <section class="last-page">
       {{ with site.GetPage "/" }}
         {{ range .Params.contents }}
