@@ -25,4 +25,8 @@ items:
   target: https://github.com/noesya/alice/blob/main/LICENSE
   kind: url
   children: []
+- title: Acheter
+  target: https://volumique.com/shopv2/produit/alice-et-les-crypto-trolls/
+  kind: url
+  children: []
 
