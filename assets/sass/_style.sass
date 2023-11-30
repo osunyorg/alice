@@ -110,13 +110,18 @@ header#document-header
                     border-radius: 5px
             &:nth-of-type(even)
                 .call_to_action--with-image
-                    @include media-breakpoint-up(desktop)
+                    @include media-breakpoint-up(lg)
                         align-items: center
                         > picture
                             order: -1
-                            grid-column: 1/7
+                            grid-column: 1/6
                         > div
                             order: 1
+                            grid-column: 6/13
+                    @include media-breakpoint-up(xl)
+                        > picture
+                            grid-column: 1/8
+                        > div
                             grid-column: 8/12
                 
         &-organizations
