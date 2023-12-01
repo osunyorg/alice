@@ -3,7 +3,7 @@ paginate: 18
 enableRobotsTXT: true
 removePathAccents: true
 params:
-  plausible: aliceaupaysdescryptos.org
+  plausible: aliceetlescryptotrolls.org
   logo:
     header: "/assets/images/alice.png"
   summary:
