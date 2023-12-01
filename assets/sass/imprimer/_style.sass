@@ -23,10 +23,14 @@ i
     line-height: 20pt
     margin: 0
 
-.cover
+.cover,
+.back
     margin: 0
     img
         width: 100%
+
+#back
+    page: back
 
 .blank
     break-before: right
@@ -55,12 +59,4 @@ i
             margin-top: 0
 
 .last-page
-    break-before: left
-    .isbn
-        display: flex
-        margin-top: 30pt
-        justify-content: space-between
-        .barcode
-            width: 100pt
-        .price
-            font-size: 12pt
+    break-before: right

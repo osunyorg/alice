@@ -69,7 +69,6 @@
         {{ end }}
       </section>
     {{ end }}
-    <section class="blank"></section>
     <section class="last-page">
       {{ with site.GetPage "/" }}
         {{ range .Params.contents }}
@@ -78,6 +77,9 @@
           {{ end }}
         {{ end }}
       {{ end }}
+    </section>
+    <section class="back" id="back">
+      <img src="/assets/images/imprimer/back.jpg">
     </section>
     <script>
       const anchorTags = document.getElementsByTagName('a');
