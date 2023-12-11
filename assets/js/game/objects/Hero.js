@@ -40,7 +40,7 @@ export default class Hero extends Character {
     this.speed = 5;
     this.controls = new Controls();
     this.direction = 1;
-    this.collideTimeoutDuration = 1000;
+    this.collideTimeoutDuration = 100;
     this.isWalking = false;
     this.isWalkingToTarget = false;
     this.audio1 = document.getElementById('sound-step-l');
@@ -143,7 +143,4 @@ export default class Hero extends Character {
 
     super.update();
   }
-  // onCollide(object) {
-  //   return;
-  // }
 }

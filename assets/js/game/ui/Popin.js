@@ -22,6 +22,8 @@ export class Popin {
   open() {
     if (this.state.opening || this.state.opened) return;
     this.state.opened = true;
+    document.body.classList.remove(this.classes.bodyClosing);
+    document.body.classList.remove(this.classes.bodyOpened);
 
     this.element.style.display = "flex";
     this.element.scrollTo(0, 0);
@@ -30,6 +32,7 @@ export class Popin {
       this.element.classList.add(this.classes.opened);
     }, 5);
 
+    clearTimeout(this.closingTimeout);
     document.body.classList.add(this.classes.bodyOpened);
   }
   close() {
