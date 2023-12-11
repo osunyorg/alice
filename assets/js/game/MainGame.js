@@ -2,10 +2,10 @@ import Scene from './Scene';
 
 export class Game {
   get width () {
-    return this.canvas.width
+    return this.container.offsetWidth
   }
   get height () {
-    return this.canvas.height
+    return this.container.offsetHeight
   }
   constructor() {
     this.tick = 0;
@@ -35,8 +35,11 @@ export class Game {
     window.addEventListener('resize', this.resize.bind(this));
   }
   resize() {
-    this.canvas.width = this.container.offsetWidth;
-    this.canvas.height = this.container.offsetHeight;
+    this.canvas.width = this.container.offsetWidth * window.devicePixelRatio;
+    this.canvas.height = this.container.offsetHeight * window.devicePixelRatio;
+    this.canvas.style.width = this.container.offsetWidth + "px";
+    this.canvas.style.height = this.container.offsetHeight + "px";
+    this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
   }
   loop () {
     this.tick += 1;
