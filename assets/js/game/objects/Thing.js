@@ -12,7 +12,7 @@ export default class Thing {
   set src (source) {
     this.image = new Image();
     this.image.addEventListener('load', () => {
-      if(!this.srcWidth || !this.srcHeight) {
+      if (!this.srcWidth || !this.srcHeight) {
         this.srcWidth = this.image.width;
         this.srcHeight = this.image.height;
       }
@@ -72,13 +72,20 @@ export default class Thing {
     game.drawImage(this.image, 0, 0, this.srcWidth, this.srcHeight, this.x, this.y, this.width, this.height);
 
     if (this.isCollided && !this.wasCollided) {
-        this.wasCollided = true;
-        this.startCollide();
-      } else if (!this.isCollided && this.wasCollided) {
-        this.wasCollided = false;
-        this.stopCollide();
-      }
-      this.isCollided = false;
+      this.wasCollided = true;
+      this.startCollide();
+    } else if (!this.isCollided && this.wasCollided) {
+      this.wasCollided = false;
+      this.stopCollide();
+    }
+    this.isCollided = false;
+    this.drawHitbox();
   }
-  
+  drawHitbox() {
+    game.ctx.beginPath();
+    game.ctx.globalAlpha = 0.3;
+    game.ctx.fillStyle = "blue";
+    game.ctx.fillRect(this.x + this.hitbox.x + game.camera.x, this.y + this.hitbox.y + game.camera.y, this.hitbox.width, this.hitbox.height)
+    game.ctx.globalAlpha = 1.0;
+  }
 }

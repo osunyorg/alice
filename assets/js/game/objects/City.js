@@ -6,13 +6,13 @@ import { game } from "js/game/MainGame";
 export default class City extends SpeakingThing {
   constructor(data) {
     data.hitbox = {
-      width: 70,
-      height: 70,
-      x: 50,
+      width: 100,
+      height: 100,
+      x: 0,
       y: 0
     }
 
-    data.scale = WORLD.cities.scale;
+    data.scale = WORLD.cities.scale * (1 / window.devicePixelRatio);
 
     super(data);
 
@@ -45,8 +45,11 @@ export default class City extends SpeakingThing {
 
   setImage(image) {
     this.src = image.currentSrc;
-    this.hitbox.height = image.height / 8
-    this.hitbox.y = image.height / 2
+    this.hitbox.width = image.width * WORLD.cities.scale * 0.8;
+    this.hitbox.height = image.height * WORLD.cities.scale * 0.8;
+    this.depthOffset = (image.height * WORLD.cities.scale) * 0.15;
+    this.hitbox.x = image.width * WORLD.cities.scale * 0.1;
+    this.hitbox.y = image.height * WORLD.cities.scale * 0.2;
   }
 
   onCollide() {

@@ -37,7 +37,7 @@ export default class Troll extends Character {
     this.isSpeaking = false;
     this.slangs = window.trollDialogs;
     this.slang = "";
-    this.slangMilliseconds = 5000;
+    this.slangMilliseconds = 1000;
 
     this.setAnimation("idle");
   }

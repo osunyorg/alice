@@ -9,7 +9,7 @@ export const WORLD = {
     scale: 0.8
   },
   cities: {
-    scale: 0.8 * 1 / window.devicePixelRatio
+    scale: 0.8
   },
   area: {
     left: 0,
@@ -19,7 +19,7 @@ export const WORLD = {
   },
   collisions: {
     size: 32,
-    visible: false,
+    visible: true,
     matrice: [
         '00000000000000000000000000000000000000000000000000000000000000000000001100000000', 
         '00000000000000000000000000000000000000000000000000000000000000000000001100000000', 

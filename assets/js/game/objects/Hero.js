@@ -4,14 +4,22 @@ import { WORLD } from "js/game/data/world";
 import 'js/game/utils/lerp';
 export default class Hero extends Character {
   constructor({x = 0, y = 0}) {
+    const width = 128 * WORLD.characters.scale,
+      height = 150 * WORLD.characters.scale;
     super({
       x,
       y,
-      width: 128 * WORLD.characters.scale,
-      height: 150 * WORLD.characters.scale,
+      width: width,
+      height: height,
       srcWidth: 256,
       srcHeight: 300,
       src: '/assets/images/jouer/characters/alice.webp',
+      hitbox: {
+        x: width * 0.25,
+        y: height * 0.35,
+        width: width * 0.5,
+        height: height * 0.45,
+      },
       animations: {
         idle: {
           steps: 8,
@@ -135,4 +143,7 @@ export default class Hero extends Character {
 
     super.update();
   }
+  // onCollide(object) {
+  //   return;
+  // }
 }

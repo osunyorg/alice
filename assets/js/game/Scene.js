@@ -7,7 +7,6 @@ import City from './objects/City';
 import Map from './objects/Map';
 import Troll from './objects/Troll';
 import Coin from './objects/Coin';
-
 export default class Scene {
   constructor(game) {
     this.game = game;
