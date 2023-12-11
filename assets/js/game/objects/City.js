@@ -12,7 +12,8 @@ export default class City extends SpeakingThing {
       y: 0
     }
 
-    data.scale = WORLD.cities.scale * (1 / window.devicePixelRatio);
+    data.scale = data.scale || WORLD.cities.scale;
+    data.scale *= (1 / window.devicePixelRatio);
 
     super(data);
 
@@ -47,12 +48,13 @@ export default class City extends SpeakingThing {
   }
 
   setImage(image) {
+    const hitScale = this.data.scale * window.devicePixelRatio;
     this.src = image.currentSrc;
-    this.hitbox.width = image.width * WORLD.cities.scale * 0.8;
-    this.hitbox.height = image.height * WORLD.cities.scale * 0.8;
-    this.depthOffset = (image.height * WORLD.cities.scale) * 0.15;
-    this.hitbox.x = image.width * WORLD.cities.scale * 0.1;
-    this.hitbox.y = image.height * WORLD.cities.scale * 0.2;
+    this.hitbox.width = image.width * hitScale * 0.8;
+    this.hitbox.height = image.height * hitScale * 0.8;
+    // this.depthOffset = (image.height * hitScale) * 0.15;
+    this.hitbox.x = image.width * hitScale * 0.1;
+    this.hitbox.y = image.height * hitScale * 0.2;
   }
 
   onCollide() {

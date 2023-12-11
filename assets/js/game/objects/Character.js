@@ -16,8 +16,8 @@ export default class Character extends Sprite {
 
     // if (this.type !== "hero") return;
 
-    const mapx = Math.floor((x + this.width/2) / size)
-    const mapy = Math.floor((y + (this.height * 0.75)) / size)
+    const mapx = Math.floor((x + this.width / 2) / size)
+    const mapy = Math.floor((y + this.height * 0.75) / size)
     if (typeof matrice[mapy] == 'undefined') {
       return false;
     } else if (matrice[mapy].length < mapx) {

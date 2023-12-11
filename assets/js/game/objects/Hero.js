@@ -16,9 +16,9 @@ export default class Hero extends Character {
       src: '/assets/images/jouer/characters/alice.webp',
       hitbox: {
         x: width * 0.25,
-        y: height * 0.35,
+        y: height * 0.4,
         width: width * 0.5,
-        height: height * 0.45,
+        height: height * 0.5,
       },
       animations: {
         idle: {
