@@ -1,3 +1,4 @@
+import { WORLD } from "../data/world";
 import { game } from "js/game/MainGame";
 
 export default class Thing {
@@ -79,7 +80,10 @@ export default class Thing {
       this.stopCollide();
     }
     this.isCollided = false;
-    this.drawHitbox();
+
+    if (WORLD.collisions.visible) {
+      this.drawHitbox();
+    }
   }
   drawHitbox() {
     game.ctx.beginPath();

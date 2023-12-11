@@ -1,5 +1,5 @@
+import { WORLD } from "../data/world";
 import { game } from "js/game/MainGame";
-import Thing from "./Thing";
 import SpeakingThing from "./SpeakingThing";
 
 export default class Sprite extends SpeakingThing {
@@ -37,6 +37,8 @@ export default class Sprite extends SpeakingThing {
       this.width, 
       this.height);
 
-    this.drawHitbox();
+    if (WORLD.collisions.visible) {
+      this.drawHitbox();
+    }
   }
 }

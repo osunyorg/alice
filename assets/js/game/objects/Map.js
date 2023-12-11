@@ -41,8 +41,8 @@ export default class Map extends Thing {
   update() {
     // return;
     super.update();
-    if (WORLD.collisions.visible)
+    if (WORLD.collisions.visible){
       this.drawCollisionMap();
+    }
   }
-
 }

@@ -14,7 +14,7 @@ class UI {
     this.coinsTotal = document.querySelectorAll('.definitions .definition').length;
     this.update();
   }
-  closeAllPopins() {
+  closeAllPopins(excepted) {
     for (let id in this.popins) {
       this.closePopin(id);
     }
@@ -23,7 +23,7 @@ class UI {
     return this.popins[id];
   }
   openPopin(id) {
-    this.closeAllPopins();
+    this.closeAllPopins(id);
     this.popins[id].open();
     return this.popins[id];
   }

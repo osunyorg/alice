@@ -22,13 +22,14 @@ export class Popin {
   open() {
     if (this.state.opening || this.state.opened) return;
     this.state.opened = true;
-    document.body.classList.remove(this.classes.bodyClosing);
+
     document.body.classList.remove(this.classes.bodyOpened);
 
     this.element.style.display = "flex";
     this.element.scrollTo(0, 0);
 
     setTimeout(() => {
+      document.body.classList.remove(this.classes.bodyClosing);
       this.element.classList.add(this.classes.opened);
     }, 5);
 
@@ -46,7 +47,7 @@ export class Popin {
     clearTimeout(this.closingTimeout);
 
     this.closingTimeout = setTimeout(() => {
-      if (!this.state.opened) return;
+      // if (!this.state.opened) return;
       this.element.style.display = "none";
       document.body.classList.remove(this.classes.bodyClosing);
     }, 400);

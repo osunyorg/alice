@@ -26,7 +26,10 @@ export default class City extends SpeakingThing {
     this.dialog.classList.add('game-dialog--action');
     this.dialog.addEventListener('click', () => this.openPopin());
 
-   this.setImageFromDom();
+    this.setImageFromDom();
+
+    this.popin = UI.getPopin(this.data.id);
+
   }
 
   setImageFromDom() {
@@ -65,6 +68,6 @@ export default class City extends SpeakingThing {
   }
 
   stopCollide() {
-    UI.closeAllPopins();
+    this.popin.close();
   }
 }

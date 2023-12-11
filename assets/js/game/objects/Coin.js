@@ -23,10 +23,9 @@ export default class Coin extends Thing {
   }
 
   pick() {
-    if (this.active) {
-        this.active = false;
-        UI.collectCoin(this.data.id);
-    }
+    if (!this.active) return;
+    this.active = false;
+    UI.collectCoin(this.data.id);
   }
 
   stopCollide() {

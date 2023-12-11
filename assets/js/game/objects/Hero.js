@@ -40,7 +40,7 @@ export default class Hero extends Character {
     this.speed = 5;
     this.controls = new Controls();
     this.direction = 1;
-    this.collideTimeoutDuration = 100;
+    this.collideTimeoutDuration = 1;
     this.isWalking = false;
     this.isWalkingToTarget = false;
     this.audio1 = document.getElementById('sound-step-l');
@@ -118,7 +118,6 @@ export default class Hero extends Character {
       this.isWalkingToTarget = false;
       this.isWalking = false;
     }
-    
   }
   makeSound() {
     if (this.audio1.paused) {
