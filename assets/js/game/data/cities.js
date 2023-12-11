@@ -41,6 +41,7 @@ export const CITIES = [
         id: 'bankochain',
         x: 1000,
         y: 600,
+        scale: 0.5
     },
     {
         id: 'mordor-club',

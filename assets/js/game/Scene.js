@@ -23,7 +23,8 @@ export default class Scene {
     this.addCities();
     this.addTrolls();
     this.elements = [
-      ...this.cities, 
+      ...this.map.elements,
+      ...this.cities,
       ...this.trolls,
       this.hero
     ]

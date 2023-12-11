@@ -26,7 +26,7 @@ export default class Thing {
     this.image.src = source;
     this.ready = true
   }
-  constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null}) {
+  constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null, depthOffset = 0}) {
     this.x = x || 0;
     this.y = y || 0;
     this.width = width;
@@ -35,7 +35,7 @@ export default class Thing {
     this.srcHeight = srcHeight;
     this.hitbox = hitbox || { width, height, x: 0, y: 0 };
     this.ready = this.src ? true : false;
-    this.depthOffset = 0;
+    this.depthOffset = depthOffset;
     this.scale = scale;
 
     // Collisions

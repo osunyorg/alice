@@ -1,3 +1,8 @@
+const forest1 = '/assets/images/jouer/elements/forest01.png',
+  forest2 = '/assets/images/jouer/elements/forest02.png',
+  rocks1 = '/assets/images/jouer/elements/rocks01.png',
+  rocks2 = '/assets/images/jouer/elements/rocks02.png';
+
 export const WORLD = {
   width: 2500,
   height: 1016,
@@ -9,7 +14,7 @@ export const WORLD = {
     scale: 0.8
   },
   cities: {
-    scale: 0.8
+    scale: 0.7
   },
   area: {
     left: 0,
@@ -17,9 +22,112 @@ export const WORLD = {
     right: 3000,
     bottom: 1400
   },
+  elements: [
+    {
+      src: forest2,
+      width: 130,
+      height: 110,
+      x: 200,
+      y: 440
+    },
+    {
+      src: forest2,
+      width: 130,
+      height: 110,
+      x: 550,
+      y: 770
+    },
+    {
+      src: forest1,
+      width: 230,
+      height: 160,
+      x: 670,
+      y: 710
+    },
+    {
+      src: forest1,
+      width: 230,
+      height: 160,
+      x: 1270,
+      y: 550
+    },
+    {
+      src: forest1,
+      width: 230,
+      height: 160,
+      x: 1680,
+      y: 370
+    },
+    {
+      src: forest2,
+      width: 130,
+      height: 110,
+      x: 1530,
+      y: 390
+    },
+    {
+      src: rocks1,
+      width: 110,
+      height: 90,
+      x: 1990,
+      y: 590
+    },
+    {
+      src: rocks2,
+      width: 140,
+      height: 110,
+      x: 1890,
+      y: 590
+    },
+    {
+      src: rocks1,
+      width: 110,
+      height: 90,
+      x: 2315,
+      y: 95
+    },
+    {
+      src: rocks1,
+      width: 110,
+      height: 90,
+      x: 2175,
+      y: 150
+    },
+    {
+      src: rocks2,
+      width: 80,
+      height: 65,
+      x: 2255,
+      y: 130
+    },
+
+    {
+      src: rocks2,
+      width: 130,
+      height: 65,
+      x: 980,
+      y: 145,
+      depthOffset: -45
+    },
+    {
+      src: rocks2,
+      width: 105,
+      height: 85,
+      x: 1180,
+      y: 115,
+      depthOffset: -15
+    },
+    {
+      src: rocks1,
+      width: 140,
+      height: 110,
+      x: 1060,
+      y: 105,
+    },
+  ],
   collisions: {
     size: 32,
-    visible: false,
+    visible: true,
     matrice: [
         '00000000000000000000000000000000000000000000000000000000000000000000001100000000', 
         '00000000000000000000000000000000000000000000000000000000000000000000001100000000', 

@@ -12,7 +12,7 @@ export default class Map extends Thing {
       src: '/assets/images/jouer/map.png'
     })
     this.setCollision();
-    this.drawCollisionMap();
+    this.drawElements();
     super.update();
   }
   setCollision() {
@@ -44,5 +44,13 @@ export default class Map extends Thing {
     if (WORLD.collisions.visible){
       this.drawCollisionMap();
     }
+    // this.elements.forEach(element => element.drawHitbox())
+  }
+  drawElements() {
+    this.elements = [];
+    WORLD.elements.forEach(element => {
+      this.elements.push(new Thing(element));
+    });
+    console.log(this.elements)
   }
 }
