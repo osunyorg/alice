@@ -7,6 +7,7 @@ export default class Character extends Sprite {
     this.speed = 10;
     this.type = "character";
     this.canCollide = true;
+    this.collisions = {};
     this.collideTimeoutDuration = 5000;
     this.depthOffset = 0;
   }
@@ -32,7 +33,7 @@ export default class Character extends Sprite {
 
     return true;
   }
-  onCollide() {
+  onCollide(object) {
     this.canCollide = false;
     setTimeout(() => {
       this.canCollide = true;

@@ -57,7 +57,7 @@ export default class Thing {
     return (this.x + this.hitbox.x + this.hitbox.width > thing.x + thing.hitbox.x && this.x + this.hitbox.x < thing.x + thing.hitbox.x + thing.hitbox.width && thing.y + thing.hitbox.x + thing.hitbox.height > this.y + this.hitbox.y && thing.y + thing.hitbox.y < this.y + this.hitbox.height + this.hitbox.y);
   }
 
-  onCollide() {
+  onCollide(object) {
     this.isCollided = true;
   }
 

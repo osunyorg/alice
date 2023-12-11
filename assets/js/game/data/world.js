@@ -9,7 +9,7 @@ export const WORLD = {
     scale: 0.8
   },
   cities: {
-    scale: 0.4
+    scale: 0.8 * 1 / window.devicePixelRatio
   },
   area: {
     left: 0,

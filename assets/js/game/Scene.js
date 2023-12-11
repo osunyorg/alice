@@ -62,17 +62,17 @@ export default class Scene {
   }
   checkCollision() {
     this.trolls.forEach(troll => {
-      if (troll.collides(this.hero)) {
+      if (this.hero.collides(troll)) {
         troll.onCollide();
       }
     });
     this.cities.forEach(city => {
-      if (city.collides(this.hero)) {
+      if (this.hero.collides(city)) {
         city.onCollide();
       }
     });
     this.coins.forEach((coin) => {
-      if (coin.collides(this.hero) && coin.active) {
+      if (this.hero.collides(coin) && coin.active) {
         coin.onCollide();
       }
     });
