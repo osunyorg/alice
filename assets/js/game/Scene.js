@@ -23,11 +23,14 @@ export default class Scene {
     this.addCities();
     this.addTrolls();
     this.elements = [
+      ...this.cities.map(city => city.sign),
       ...this.map.elements,
       ...this.cities,
       ...this.trolls,
       this.hero
     ]
+
+    console.log(this.elements)
   }
   doubleMatrix() {
     let matrice = [];

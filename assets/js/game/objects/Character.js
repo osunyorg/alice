@@ -9,7 +9,7 @@ export default class Character extends Sprite {
     this.canCollide = true;
     this.collisions = {};
     this.collideTimeoutDuration = 5000;
-    this.depthOffset = 0;
+    this.depthOffset = parameters.depthOffset || 0;
   }
   move(x, y) {
     const { matrice, size } = WORLD.collisions

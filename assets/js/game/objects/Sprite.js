@@ -13,7 +13,7 @@ export default class Sprite extends SpeakingThing {
     this.data = parameters.data;
     this.animations = parameters.animations;
     this.currentAnimation = null;
-    this.depthOffset = 0;
+    this.depthOffset = parameters.depthOffset || 0;
   }
   setAnimation(animationName) {
     if (this.currentAnimation === animationName) return;

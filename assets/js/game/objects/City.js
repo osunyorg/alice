@@ -2,6 +2,7 @@ import { WORLD } from "js/game/data/world";
 import SpeakingThing from "./SpeakingThing";
 import UI from "js/game/UI";
 import { game } from "js/game/MainGame";
+import Sign from "./Sign";
 
 export default class City extends SpeakingThing {
   constructor(data) {
@@ -31,6 +32,14 @@ export default class City extends SpeakingThing {
 
     this.popin = UI.getPopin(this.data.id);
 
+    if (this.data.sign) {
+      this.data.sign.x += this.data.x;
+      this.data.sign.y += this.data.y;
+      this.sign = new Sign({
+        ...this.data.sign,
+        src: `/assets/images/jouer/signs/${this.data.id}.png`
+      });
+    }
   }
 
   setImageFromDom() {
@@ -71,5 +80,10 @@ export default class City extends SpeakingThing {
 
   stopCollide() {
     this.popin.close();
+  }
+
+  update() {
+    super.update();
+    if (this.sign) this.sign.update();
   }
 }

@@ -26,6 +26,7 @@ export default class Thing {
     this.image.src = source;
     this.ready = true
   }
+
   constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null, depthOffset = 0}) {
     this.x = x || 0;
     this.y = y || 0;
@@ -85,6 +86,7 @@ export default class Thing {
       this.drawHitbox();
     }
   }
+
   drawHitbox() {
     game.ctx.beginPath();
     game.ctx.globalAlpha = 0.3;
