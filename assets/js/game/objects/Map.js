@@ -7,12 +7,10 @@ export default class Map extends Thing {
     super({
       width: WORLD.width,
       height: WORLD.height,
-      srcWidth: WORLD.width * 2,
-      srcHeight: WORLD.height * 2,
-      src: '/assets/images/jouer/ile.png'
+      src: WORLD.mapSrc
     })
     this.setCollision();
-    this.drawCollisionMap();
+    this.drawElements();
     super.update();
   }
   setCollision() {
@@ -41,8 +39,19 @@ export default class Map extends Thing {
   update() {
     // return;
     super.update();
-    if (WORLD.collisions.visible)
+    if (WORLD.collisions.visible){
       this.drawCollisionMap();
-  }
+    }
+    this.elements.forEach(element => {
 
+    })
+  }
+  drawElements() {
+    this.elements = [];
+    WORLD.elements.forEach(element => {
+      this.elements.push(new Thing(element));
+    });
+
+    this.elements.forEach(element => element.setupAnimation())
+  }
 }

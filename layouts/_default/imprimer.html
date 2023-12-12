@@ -15,9 +15,9 @@
   <body>
     {{ with site.GetPage "/" }}
       <section class="cover">
-        <img src="/assets/images/imprimer/alice.png">
-        <h1>Alice et les <br>crypto-trolls</h1>
+        <img src="/assets/images/imprimer/cover.jpg">
       </section>
+      <section class="blank"></section>
       <section class="intro">
         <h2>{{ .Params.summary }}</h2>
         {{ with index .Params.contents 0 }}
@@ -51,7 +51,6 @@
         {{ end }}
       </section>
     {{ end }}
-    <section class="blank"></section>
     {{ with site.GetPage "/pages/trolls" }}
       <section class="trolls">
         <h2>{{ .Title }}</h2>
@@ -77,10 +76,9 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      <div class="isbn">
-        <span class="price">9€</span>
-        <img src="/assets/images/imprimer/barcode.gif" class="barcode">
-      </div>
+    </section>
+    <section class="back" id="back">
+      <img src="/assets/images/imprimer/back.jpg">
     </section>
     <script>
       const anchorTags = document.getElementsByTagName('a');

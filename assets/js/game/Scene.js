@@ -7,7 +7,6 @@ import City from './objects/City';
 import Map from './objects/Map';
 import Troll from './objects/Troll';
 import Coin from './objects/Coin';
-
 export default class Scene {
   constructor(game) {
     this.game = game;
@@ -24,10 +23,14 @@ export default class Scene {
     this.addCities();
     this.addTrolls();
     this.elements = [
-      ...this.cities, 
+      ...this.cities.map(city => city.sign),
+      ...this.map.elements,
+      ...this.cities,
       ...this.trolls,
       this.hero
     ]
+
+    console.log(this.elements)
   }
   doubleMatrix() {
     let matrice = [];
@@ -62,17 +65,17 @@ export default class Scene {
   }
   checkCollision() {
     this.trolls.forEach(troll => {
-      if (troll.collides(this.hero)) {
+      if (this.hero.collides(troll)) {
         troll.onCollide();
       }
     });
     this.cities.forEach(city => {
-      if (city.collides(this.hero)) {
+      if (this.hero.collides(city)) {
         city.onCollide();
       }
     });
     this.coins.forEach((coin) => {
-      if (coin.collides(this.hero) && coin.active) {
+      if (this.hero.collides(coin) && coin.active) {
         coin.onCollide();
       }
     });

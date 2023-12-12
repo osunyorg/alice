@@ -14,19 +14,21 @@ export default class Coin extends Thing {
     this.type = "coin";
     this.data = data;
     this.active = true; 
-    this.popin;
+    this.popin = UI.getPopin(this.data.id);
+    this.popin.element.querySelector('.pick').addEventListener('click', this.pick.bind(this));
+
+    this.setupAnimation();
+    this.introduction.delay += 50
   }
 
   startCollide() {
-    this.popin = UI.openPopin(this.data.id);
-    this.popin.element.querySelector('.pick').addEventListener('click', this.pick.bind(this));
+    UI.openPopin(this.data.id);
   }
 
   pick() {
-    if (this.active) {
-        this.active = false;
-        UI.collectCoin(this.data.id);    
-    }
+    if (!this.active) return;
+    this.active = false;
+    UI.collectCoin(this.data.id);
   }
 
   stopCollide() {
@@ -35,6 +37,6 @@ export default class Coin extends Thing {
 
   update() {
     if (!this.active) return;
-    super.update()
+    super.update();
   }
 }

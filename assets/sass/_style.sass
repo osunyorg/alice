@@ -3,11 +3,13 @@ h1, .h1
     line-height: 100%
     text-align: center
 
-h2, .h2
+.heading h2
     color: $color-accent
 
 a
     text-underline-offset: 0.15em !important
+
+// Ajoute des guillements pour des citations dans les textes
 .content,
 .block-content
     i
@@ -71,7 +73,7 @@ header#document-header
         display: none
 .page__home
     @include media-breakpoint-up(desktop)
-        .block-partners
+        .block-organizations
             margin-top: $spacing4
         .block-chapter
             text-align: center
@@ -87,6 +89,11 @@ header#document-header
                 text-transform: none
                 font-weight: bold
         &-call_to_action
+            + .block-call_to_action
+                margin-top: 0
+            .block-content
+                padding-top: $spacing2 !important
+                padding-bottom: $spacing2 !important
             .call_to_action
                 .description
                     a
@@ -103,16 +110,21 @@ header#document-header
                     border-radius: 5px
             &:nth-of-type(even)
                 .call_to_action--with-image
-                    @include media-breakpoint-up(desktop)
+                    @include media-breakpoint-up(lg)
                         align-items: center
-                        > div
-                            order: 1
-                            grid-column: 8/13
                         > picture
                             order: -1
                             grid-column: 1/6
+                        > div
+                            order: 1
+                            grid-column: 6/13
+                    @include media-breakpoint-up(xl)
+                        > picture
+                            grid-column: 1/8
+                        > div
+                            grid-column: 8/12
                 
-        &-partners
+        &-organizations
             .top
                 margin: 0
                 text-align: center
@@ -121,7 +133,7 @@ header#document-header
                     max-width: 230px
                     .media
                         background: none
-                    h3
+                    .organization-title
                         display: none
                 @include media-breakpoint-up(desktop)
                     display: flex

@@ -22,7 +22,7 @@ jobs:
         cache: 'yarn'
 
     - name: Installation des dépendances JavaScript
-      run: yarn install --frozen-lockfile
+      run: yarn install
 
     - name: Installation de Hugo
       uses: peaceiris/actions-hugo@v2.6.0
@@ -31,10 +31,10 @@ jobs:
         extended: true
 
     - name: Compilation du site
-      run: hugo
+      run: yarn osuny build
 
     - name: Déploiement Garage
       run: hugo deploy --force --maxDeletes -1
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.DEUXFLEURS_ACCESS_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEUXFLEURS_SECRET }}

@@ -9,6 +9,10 @@ items:
   target: "/lire/"
   kind: url
   children: []
+- title: Acheter
+  target: https://volumique.com/shopv2/produit/alice-et-les-crypto-trolls/
+  kind: url
+  children: []
 - title: Imprimer
   target: "/imprimer/"
   kind: url

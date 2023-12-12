@@ -9,19 +9,21 @@ class UI {
       this.popins[element.id] = new Popin(element);
     });
 
-    console.log(this.popins)
     this.coinsContainer = document.querySelector('.coins');
     this.coinsPicked = 0;
     this.coinsTotal = document.querySelectorAll('.definitions .definition').length;
     this.update();
   }
-  closeAllPopins() {
+  closeAllPopins(excepted) {
     for (let id in this.popins) {
       this.closePopin(id);
     }
   }
+  getPopin(id) {
+    return this.popins[id];
+  }
   openPopin(id) {
-    this.closeAllPopins();
+    this.closeAllPopins(id);
     this.popins[id].open();
     return this.popins[id];
   }

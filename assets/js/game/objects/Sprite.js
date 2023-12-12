@@ -1,5 +1,5 @@
+import { WORLD } from "../data/world";
 import { game } from "js/game/MainGame";
-import Thing from "./Thing";
 import SpeakingThing from "./SpeakingThing";
 
 export default class Sprite extends SpeakingThing {
@@ -13,7 +13,7 @@ export default class Sprite extends SpeakingThing {
     this.data = parameters.data;
     this.animations = parameters.animations;
     this.currentAnimation = null;
-    this.depthOffset = 50;
+    this.depthOffset = parameters.depthOffset || 0;
   }
   setAnimation(animationName) {
     if (this.currentAnimation === animationName) return;
@@ -36,5 +36,9 @@ export default class Sprite extends SpeakingThing {
       this.y, 
       this.width, 
       this.height);
+
+    if (WORLD.collisions.visible) {
+      this.drawHitbox();
+    }
   }
 }

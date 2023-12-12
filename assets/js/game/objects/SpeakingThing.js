@@ -10,7 +10,7 @@ export default class SpeakingThing extends Thing {
   setDialog() {
     this.dialog = document.createElement('div');
     this.dialog.classList.add('game-dialog');
-    game.container.append(this.dialog)
+    game.container.append(this.dialog);
   }
   speak(html, voice) {
     if (this.isSpeaking) return false;

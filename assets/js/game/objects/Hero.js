@@ -4,14 +4,22 @@ import { WORLD } from "js/game/data/world";
 import 'js/game/utils/lerp';
 export default class Hero extends Character {
   constructor({x = 0, y = 0}) {
+    const width = 128 * WORLD.characters.scale,
+      height = 150 * WORLD.characters.scale;
     super({
       x,
       y,
-      width: 128 * WORLD.characters.scale,
-      height: 150 * WORLD.characters.scale,
+      width: width,
+      height: height,
       srcWidth: 256,
       srcHeight: 300,
       src: '/assets/images/jouer/characters/alice.png',
+      hitbox: {
+        x: width * 0.25,
+        y: height * 0.4,
+        width: width * 0.5,
+        height: height * 0.5,
+      },
       animations: {
         idle: {
           steps: 8,
@@ -32,7 +40,7 @@ export default class Hero extends Character {
     this.speed = 5;
     this.controls = new Controls();
     this.direction = 1;
-    this.collideTimeoutDuration = 1000;
+    this.collideTimeoutDuration = 1;
     this.isWalking = false;
     this.isWalkingToTarget = false;
     this.audio1 = document.getElementById('sound-step-l');
@@ -110,7 +118,6 @@ export default class Hero extends Character {
       this.isWalkingToTarget = false;
       this.isWalking = false;
     }
-    
   }
   makeSound() {
     if (this.audio1.paused) {

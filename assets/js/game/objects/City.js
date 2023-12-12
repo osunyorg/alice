@@ -2,17 +2,19 @@ import { WORLD } from "js/game/data/world";
 import SpeakingThing from "./SpeakingThing";
 import UI from "js/game/UI";
 import { game } from "js/game/MainGame";
+import Sign from "./Sign";
 
 export default class City extends SpeakingThing {
   constructor(data) {
     data.hitbox = {
-      width: 70,
-      height: 70,
-      x: 50,
+      width: 100,
+      height: 100,
+      x: 0,
       y: 0
     }
 
-    data.scale = WORLD.cities.scale;
+    data.scale = data.scale || WORLD.cities.scale;
+    data.scale *= (1 / window.devicePixelRatio);
 
     super(data);
 
@@ -26,7 +28,20 @@ export default class City extends SpeakingThing {
     this.dialog.classList.add('game-dialog--action');
     this.dialog.addEventListener('click', () => this.openPopin());
 
-   this.setImageFromDom();
+    this.setImageFromDom();
+
+    this.popin = UI.getPopin(this.data.id);
+
+    if (this.data.sign) {
+      this.data.sign.x += this.data.x;
+      this.data.sign.y += this.data.y;
+      this.sign = new Sign({
+        ...this.data.sign,
+        src: `/assets/images/jouer/signs/${this.data.id}.png`
+      });
+    }
+
+    this.setupAnimation();
   }
 
   setImageFromDom() {
@@ -34,25 +49,31 @@ export default class City extends SpeakingThing {
     if (!image) {
       return;
     }
+
     if (image.complete) {
       this.setImage(image);
     } else {
       image.addEventListener('load', () => {
         this.setImage(image);
-      })
+      });
     }
   }
 
   setImage(image) {
     this.src = image.currentSrc;
-    this.hitbox.height = image.height / 8
-    this.hitbox.y = image.height / 2
+  }
+
+  onLoaded() {
+    this.hitbox.width = this.width * 0.8;
+    this.hitbox.height = this.height * 0.8;
+    this.hitbox.x = this.width * 0.1;
+    this.hitbox.y = this.height * 0.2;
   }
 
   onCollide() {
     super.onCollide();
     if (!this.wasCollided) {
-        game.scene.hero.isWalkingToTarget = false;
+      game.scene.hero.isWalkingToTarget = false;
     }
   }
 
@@ -62,6 +83,10 @@ export default class City extends SpeakingThing {
   }
 
   stopCollide() {
-    UI.closeAllPopins();
+    this.popin.close();
+  }
+
+  update() {
+    super.update();
   }
 }
