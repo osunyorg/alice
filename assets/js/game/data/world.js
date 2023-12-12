@@ -6,7 +6,7 @@ const forest1 = '/assets/images/jouer/elements/forest01.png',
 export const WORLD = {
   width: 2500,
   height: 1016,
-  mapSrc: '/assets/images/jouer/map.png',
+  mapSrc: '/assets/images/jouer/map-md.png',
   hero: {
     x: 625,
     y: 254

@@ -7,8 +7,6 @@ export default class Map extends Thing {
     super({
       width: WORLD.width,
       height: WORLD.height,
-      srcWidth: WORLD.width * 2,
-      srcHeight: WORLD.height * 2,
       src: WORLD.mapSrc
     })
     this.setCollision();
