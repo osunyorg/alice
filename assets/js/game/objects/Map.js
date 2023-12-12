@@ -9,7 +9,7 @@ export default class Map extends Thing {
       height: WORLD.height,
       srcWidth: WORLD.width * 2,
       srcHeight: WORLD.height * 2,
-      src: '/assets/images/jouer/map.png'
+      src: WORLD.mapSrc
     })
     this.setCollision();
     this.drawElements();
