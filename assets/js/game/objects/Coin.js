@@ -16,6 +16,9 @@ export default class Coin extends Thing {
     this.active = true; 
     this.popin = UI.getPopin(this.data.id);
     this.popin.element.querySelector('.pick').addEventListener('click', this.pick.bind(this));
+
+    this.setupAnimation();
+    this.introduction.delay += 50
   }
 
   startCollide() {
@@ -34,6 +37,6 @@ export default class Coin extends Thing {
 
   update() {
     if (!this.active) return;
-    super.update()
+    super.update();
   }
 }

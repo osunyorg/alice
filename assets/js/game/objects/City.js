@@ -40,6 +40,8 @@ export default class City extends SpeakingThing {
         src: `/assets/images/jouer/signs/${this.data.id}.png`
       });
     }
+
+    this.setupAnimation();
   }
 
   setImageFromDom() {
@@ -84,6 +86,5 @@ export default class City extends SpeakingThing {
 
   update() {
     super.update();
-    if (this.sign) this.sign.update();
   }
 }

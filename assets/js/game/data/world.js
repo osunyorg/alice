@@ -7,6 +7,7 @@ export const WORLD = {
   width: 2500,
   height: 1016,
   mapSrc: '/assets/images/jouer/map-md.png',
+  animateIntroduction: false,
   hero: {
     x: 625,
     y: 254
@@ -128,7 +129,7 @@ export const WORLD = {
   ],
   collisions: {
     size: 32,
-    visible: false,
+    visible: true,
     matrice: [
         '00000000000000000000000000000000000000000000000000000000000000000000000000000000', 
         '00000000000000000000000000000000000000000000000000000000000000000000000000000000', 

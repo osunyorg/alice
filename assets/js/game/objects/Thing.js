@@ -30,6 +30,7 @@ export default class Thing {
   constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null, depthOffset = 0}) {
     this.x = x || 0;
     this.y = y || 0;
+    this.originalY = this.y;
     this.width = width;
     this.height = height;
     this.srcWidth = srcWidth;
@@ -52,6 +53,7 @@ export default class Thing {
     if (src) {
       this.src = src;
     }
+
   }
 
   collides(thing) {
@@ -85,6 +87,10 @@ export default class Thing {
     if (WORLD.collisions.visible) {
       this.drawHitbox();
     }
+
+    if (this.introduction) {
+      this.updateAnimation()
+    }
   }
 
   drawHitbox() {
@@ -93,5 +99,40 @@ export default class Thing {
     game.ctx.fillStyle = "blue";
     game.ctx.fillRect(this.x + this.hitbox.x + game.camera.x, this.y + this.hitbox.y + game.camera.y, this.hitbox.width, this.hitbox.height)
     game.ctx.globalAlpha = 1.0;
+  }
+
+  setupAnimation() {
+    this.introduction = {};
+    if (!WORLD.animateIntroduction) return;
+
+    this.y = this.originalY - 1500;
+
+    this.introduction = {
+      duration: 100, // seconds * FPS
+      delay: (this.originalY + this.x) * 0.035,
+      tick: 0,
+      index: 0,
+      isAnimating: false,
+      isEnded: false
+    }
+  }
+  animate() {
+    if (this.introduction.isEnded) return;
+
+    this.introduction.isAnimating = true;
+
+    if (this.y < this.originalY) {
+      this.introduction.index += 1;
+      this.y = Math.min(this.originalY, this.y + this.introduction.index);
+    } else {
+      this.introduction.isEnded = true;
+    }
+  }
+  updateAnimation() {
+    this.introduction.tick += 1;
+
+    if (this.introduction.tick > this.introduction.delay) {
+      this.animate();
+    }
   }
 }

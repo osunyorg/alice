@@ -42,13 +42,16 @@ export default class Map extends Thing {
     if (WORLD.collisions.visible){
       this.drawCollisionMap();
     }
-    // this.elements.forEach(element => element.drawHitbox())
+    this.elements.forEach(element => {
+
+    })
   }
   drawElements() {
     this.elements = [];
     WORLD.elements.forEach(element => {
       this.elements.push(new Thing(element));
     });
-    console.log(this.elements)
+
+    this.elements.forEach(element => element.setupAnimation())
   }
 }
