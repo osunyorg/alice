@@ -6,13 +6,6 @@ import Sign from "./Sign";
 
 export default class City extends SpeakingThing {
   constructor(data) {
-    data.hitbox = {
-      width: 100,
-      height: 100,
-      x: 0,
-      y: 0
-    }
-
     data.scale = data.scale || WORLD.cities.scale;
     data.scale *= (1 / window.devicePixelRatio);
 
@@ -68,6 +61,8 @@ export default class City extends SpeakingThing {
     this.hitbox.height = this.height * 0.8;
     this.hitbox.x = this.width * 0.1;
     this.hitbox.y = this.height * 0.2;
+
+    console.log(this.data.id, this.width, this.height)
   }
 
   onCollide() {

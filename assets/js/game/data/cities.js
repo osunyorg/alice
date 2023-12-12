@@ -6,7 +6,8 @@ export const CITIES = [
     x: 100,
     y: 660,
     depthOffset: 30,
-    scale: 0.7,
+    width: 154,
+    height: 150,
     sign: {
       x: -45,
       y: -10,
@@ -17,7 +18,8 @@ export const CITIES = [
     id: 'crypto-university',
     x: 1400,
     y: 450,
-    scale: 0.7,
+    width: 154,
+    height: 142,
     depthOffset: 25,
     sign: {
       x: -70,
@@ -29,7 +31,8 @@ export const CITIES = [
     id: 'la-mine-de-blocs',
     x: 1300,
     y: 120,
-    scale: 0.7,
+    width: 154,
+    height: 178,
     depthOffset: 50,
     sign: {
       x: -50,
@@ -43,7 +46,8 @@ export const CITIES = [
     x: 600,
     y: 570,
     depthOffset: 50,
-    // scale: 0.75,
+    width: 154,
+    height: 178,
     sign: {
       x: -50,
       y: 20,
@@ -55,6 +59,8 @@ export const CITIES = [
     x: 2140,
     y: 480,
     depthOffset: 65,
+    width: 154,
+    height: 180,
     sign: {
       x: -50,
       y: -25,
@@ -65,7 +71,8 @@ export const CITIES = [
     id: 'le-dome-du-tonnerre',
     x: 2060,
     y: 200,
-    scale: 0.5,
+    width: 110,
+    height: 160,
     depthOffset: 45,
     sign: {
       x: -50,
@@ -78,7 +85,8 @@ export const CITIES = [
     x: 350,
     y: 280,
     depthOffset: 25,
-    // scale: 0.75,
+    width: 154,
+    height: 169,
     sign: {
       x: -70,
       y: -10,
@@ -89,7 +97,8 @@ export const CITIES = [
     id: 'bankochain',
     x: 1000,
     y: 570,
-    scale: 0.6,
+    width: 132,
+    height: 165,
     depthOffset: 40,
     sign: {
       x: -80,
@@ -101,7 +110,8 @@ export const CITIES = [
     id: 'mordor-club',
     x: 2220,
     y: -45,
-    scale: 0.8,
+    width: 176,
+    height: 188,
     depthOffset: 40,
     sign: {
       x: -60,
@@ -113,6 +123,8 @@ export const CITIES = [
     id: 'cimetiere-du-nft',
     x: 1600,
     y: 170,
+    width: 154,
+    height: 144,
     sign: {
       x: -50,
       y: -20,
