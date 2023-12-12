@@ -47,7 +47,8 @@ export const CITIES = [
         id: 'self-made-city',
         x: 350,
         y: 280,
-        depthOffset: 25
+        depthOffset: 25,
+        scale: 0.75
     },
     {
         id: 'bankochain',

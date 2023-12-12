@@ -18,6 +18,7 @@ export default class Character extends Sprite {
 
     const mapx = Math.floor((x + this.width / 2) / size)
     const mapy = Math.floor((y + this.height * 0.75) / size)
+
     if (typeof matrice[mapy] == 'undefined') {
       return false;
     } else if (matrice[mapy].length < mapx) {
@@ -27,6 +28,7 @@ export default class Character extends Sprite {
     if (matrice[mapy][mapx] == 1) {
       this.x = x;
       this.y = y;
+
     } else {
       return false;
     }
