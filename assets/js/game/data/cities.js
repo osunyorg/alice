@@ -1,45 +1,39 @@
-const signScale = 0.8;
+const signScale = 0.4;
 
 export const CITIES = [
   {
     id: 'kryptogarten',
-    x: 80,
+    x: 100,
     y: 660,
     depthOffset: 40,
-    scale: 0.8,
+    scale: 0.7,
     sign: {
       x: -45,
-      y: 30,
-      width: 95,
-      height: 165,
+      y: -10,
       scale: signScale
     }
   },
   {
     id: 'crypto-university',
-    x: 1430,
-    y: 470,
-    scale: 0.9,
+    x: 1400,
+    y: 450,
+    scale: 0.7,
     depthOffset: 50,
     sign: {
-      x: -50,
-      y: 20,
-      width: 120,
-      height: 172,
+      x: -70,
+      y: -30,
       scale: signScale
     }
   },
   {
     id: 'la-mine-de-blocs',
     x: 1300,
-    y: 100,
-    scale: 0.9,
+    y: 120,
+    scale: 0.7,
     depthOffset: 75,
     sign: {
-      x: -40,
-      y: 80,
-      width: 95,
-      height: 165,
+      x: -50,
+      y: -20,
       scale: signScale
     }
   },
@@ -49,39 +43,33 @@ export const CITIES = [
     x: 600,
     y: 570,
     depthOffset: 50,
-    scale: 0.75,
+    // scale: 0.75,
     sign: {
       x: -50,
       y: 20,
-      width: 95,
-      height: 165,
       scale: signScale
     }
   },
   {
     id: 'libertaria',
     x: 2140,
-    y: 450,
-    depthOffset: 65,
+    y: 480,
+    // depthOffset: 65,
     sign: {
       x: -50,
-      y: 20,
-      width: 95,
-      height: 165,
+      y: -25,
       scale: signScale
     }
   },
   {
     id: 'le-dome-du-tonnerre',
-    x: 2100,
-    y: 180,
-    scale: 0.6,
+    x: 2060,
+    y: 200,
+    scale: 0.5,
     depthOffset: 45,
     sign: {
       x: -50,
-      y: 20,
-      width: 121,
-      height: 172,
+      y: -20,
       scale: signScale
     }
   },
@@ -90,12 +78,10 @@ export const CITIES = [
     x: 350,
     y: 280,
     depthOffset: 25,
-    scale: 0.75,
+    // scale: 0.75,
     sign: {
-      x: -50,
-      y: 20,
-      width: 95,
-      height: 165,
+      x: -70,
+      y: -10,
       scale: signScale
     }
   },
@@ -107,36 +93,29 @@ export const CITIES = [
     depthOffset: 50,
     sign: {
       x: -80,
-      y: 20,
-      width: 95,
-      height: 165,
+      y: 0,
       scale: signScale
     }
   },
   {
     id: 'mordor-club',
-    x: 2160,
-    y: -60,
-    scale: 1,
+    x: 2220,
+    y: -45,
+    scale: 0.8,
     depthOffset: 40,
     sign: {
-      x: -50,
-      y: 110,
-      width: 95,
-      height: 165,
+      x: -60,
+      y: 40,
       scale: signScale
     }
   },
   {
     id: 'cimetiere-du-nft',
     x: 1600,
-    y: 160,
-    scale: 0.8,
+    y: 170,
     sign: {
       x: -50,
-      y: 20,
-      width: 95,
-      height: 165,
+      y: -20,
       scale: signScale
     }
   }

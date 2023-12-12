@@ -9,8 +9,8 @@ export const WORLD = {
   mapSrc: '/assets/images/jouer/map-md.png',
   animateIntroduction: true,
   hero: {
-    x: 625,
-    y: 254
+    x: 700,
+    y: 380
   },
   characters: {
     scale: 0.8
@@ -109,7 +109,7 @@ export const WORLD = {
       height: 65,
       x: 980,
       y: 145,
-      depthOffset: -45
+      depthOffset: -145
     },
     {
       src: rocks2,
@@ -117,7 +117,7 @@ export const WORLD = {
       height: 85,
       x: 1180,
       y: 115,
-      depthOffset: -15
+      depthOffset: -115
     },
     {
       src: rocks1,
@@ -125,6 +125,7 @@ export const WORLD = {
       height: 110,
       x: 1060,
       y: 105,
+      depthOffset: -100
     },
   ],
   collisions: {
