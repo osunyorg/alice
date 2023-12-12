@@ -49,29 +49,31 @@ export default class City extends SpeakingThing {
     if (!image) {
       return;
     }
+
     if (image.complete) {
       this.setImage(image);
     } else {
       image.addEventListener('load', () => {
         this.setImage(image);
-      })
+      });
     }
   }
 
   setImage(image) {
-    const hitScale = this.data.scale * window.devicePixelRatio;
     this.src = image.currentSrc;
-    this.hitbox.width = image.width * hitScale * 0.8;
-    this.hitbox.height = image.height * hitScale * 0.8;
-    // this.depthOffset = (image.height * hitScale) * 0.15;
-    this.hitbox.x = image.width * hitScale * 0.1;
-    this.hitbox.y = image.height * hitScale * 0.2;
+  }
+
+  onLoaded() {
+    this.hitbox.width = this.width * 0.8;
+    this.hitbox.height = this.height * 0.8;
+    this.hitbox.x = this.width * 0.1;
+    this.hitbox.y = this.height * 0.2;
   }
 
   onCollide() {
     super.onCollide();
     if (!this.wasCollided) {
-        game.scene.hero.isWalkingToTarget = false;
+      game.scene.hero.isWalkingToTarget = false;
     }
   }
 

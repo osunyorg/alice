@@ -22,6 +22,7 @@ export default class Thing {
         this.width = this.srcWidth * this.scale;
         this.height = this.srcHeight * this.scale;
       }
+      this.onLoaded();
     });
     this.image.src = source;
     this.ready = true
@@ -69,6 +70,9 @@ export default class Thing {
   }
 
   stopCollide() {
+  }
+
+  onLoaded() {
   }
 
   update() {
