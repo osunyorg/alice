@@ -5,7 +5,7 @@ export const CITIES = [
     id: 'kryptogarten',
     x: 100,
     y: 660,
-    depthOffset: 40,
+    depthOffset: 30,
     scale: 0.7,
     sign: {
       x: -45,
@@ -18,7 +18,7 @@ export const CITIES = [
     x: 1400,
     y: 450,
     scale: 0.7,
-    depthOffset: 50,
+    depthOffset: 25,
     sign: {
       x: -70,
       y: -30,
@@ -30,7 +30,7 @@ export const CITIES = [
     x: 1300,
     y: 120,
     scale: 0.7,
-    depthOffset: 75,
+    depthOffset: 50,
     sign: {
       x: -50,
       y: -20,
@@ -54,7 +54,7 @@ export const CITIES = [
     id: 'libertaria',
     x: 2140,
     y: 480,
-    // depthOffset: 65,
+    depthOffset: 65,
     sign: {
       x: -50,
       y: -25,
@@ -90,7 +90,7 @@ export const CITIES = [
     x: 1000,
     y: 570,
     scale: 0.6,
-    depthOffset: 50,
+    depthOffset: 40,
     sign: {
       x: -80,
       y: 0,
