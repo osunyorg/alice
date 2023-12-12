@@ -5,7 +5,7 @@ export const CITIES = [
         id: 'kryptogarten',
         x: 80,
         y: 660,
-        depthOffset: 15,
+        depthOffset: 40,
         scale: 0.8,
         sign: {
             x: -25,
@@ -19,7 +19,7 @@ export const CITIES = [
         x: 1430,
         y: 470,
         scale: 0.9,
-        depthOffset: 30,
+        depthOffset: 50,
         sign: {
             src: "/assets/images/jouer/signs/self-made-city.png",
             x: -50,
@@ -47,7 +47,7 @@ export const CITIES = [
         name: 'Eglise de la sainte crypto',
         x: 600,
         y: 570,
-        depthOffset: 25,
+        depthOffset: 50,
         scale: 0.75,
         sign: {
             src: "/assets/images/jouer/signs/self-made-city.png",
@@ -103,7 +103,7 @@ export const CITIES = [
         x: 1000,
         y: 570,
         scale: 0.6,
-        depthOffset: 20,
+        depthOffset: 50,
         sign: {
             src: "/assets/images/jouer/signs/self-made-city.png",
             x: -50,
@@ -117,6 +117,7 @@ export const CITIES = [
         x: 2160,
         y: -60,
         scale: 1,
+        depthOffset: 40,
         sign: {
             src: "/assets/images/jouer/signs/self-made-city.png",
             x: -50,
