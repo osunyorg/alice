@@ -1,5 +1,6 @@
 import { WORLD } from "../data/world";
 import { game } from "js/game/MainGame";
+import settings from "../data/settings";
 
 export default class Thing {
 
@@ -22,10 +23,11 @@ export default class Thing {
         this.width = this.srcWidth * this.scale;
         this.height = this.srcHeight * this.scale;
       }
+      this.ready = true
       this.onLoaded();
     });
-    this.image.src = source;
-    this.ready = true
+
+    this.image.src = source.replace('.png', settings.extension);
   }
 
   constructor({x, y, width, height, srcWidth, srcHeight, hitbox = null, src = null, scale = null, depthOffset = 0}) {

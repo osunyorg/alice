@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" fetchpriority="high" as="image" href="/assets/images/jouer/bitcoin-plat.webp" type="image/webp">
     {{ partial "head/css.html" }}
     {{ partial "head/seo.html" . }}
     {{ partial "head/favicons.html" . }}
@@ -23,7 +24,9 @@
                       {{ with .data}}
                         {{ safeHTML .text  }}
                       {{ end }}
-                      <a class="pick">Ramasser</a>
+                      <div class="action">
+                        <button class="pick">Ramasser</button>
+                      </div>
                     </article>
                   </li>
                 {{ end }}

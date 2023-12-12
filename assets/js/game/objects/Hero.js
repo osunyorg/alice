@@ -13,7 +13,7 @@ export default class Hero extends Character {
       height: height,
       srcWidth: 256,
       srcHeight: 300,
-      src: '/assets/images/jouer/characters/alice.webp',
+      src: '/assets/images/jouer/characters/alice.png',
       hitbox: {
         x: width * 0.25,
         y: height * 0.4,
