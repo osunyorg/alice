@@ -115,7 +115,7 @@ export default class Thing {
 
     this.introduction = {
       duration: 100, // seconds * FPS
-      delay: (this.originalY + this.x) * 0.035,
+      delay: (this.originalY + this.x) * 0.025,
       tick: 0,
       index: 0,
       isAnimating: false,

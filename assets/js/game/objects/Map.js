@@ -42,9 +42,6 @@ export default class Map extends Thing {
     if (WORLD.collisions.visible){
       this.drawCollisionMap();
     }
-    this.elements.forEach(element => {
-
-    })
   }
   drawElements() {
     this.elements = [];
@@ -52,6 +49,6 @@ export default class Map extends Thing {
       this.elements.push(new Thing(element));
     });
 
-    this.elements.forEach(element => element.setupAnimation())
+    // this.elements.forEach(element => element.setupAnimation())
   }
 }

@@ -17,12 +17,20 @@ export default class Coin extends Thing {
     this.popin = UI.getPopin(this.data.id);
     this.popin.element.querySelector('.pick').addEventListener('click', this.pick.bind(this));
 
+    this.up = {
+      playing: false,
+      offset: -13,
+      y: 0,
+      speed: 0.1,
+      direction: 1
+    };
+
     this.setupAnimation();
-    this.introduction.delay += 50
   }
 
   startCollide() {
     UI.openPopin(this.data.id);
+    this.onHover();
   }
 
   pick() {
@@ -38,5 +46,34 @@ export default class Coin extends Thing {
   update() {
     if (!this.active) return;
     super.update();
+
+    if (this.up.playing) {
+      this.anime();
+    }
+  }
+
+  onHover() {
+    if (this.up.playing) return;
+    this.up.tick = 0;
+    this.up.playing = true;
+    this.up.direction = -1;
+    this.up.speed = 2;
+    this.up.y = 0;
+    document.getElementById('swoosh').play();
+  }
+
+  anime() {
+    this.up.y += this.up.speed * this.up.direction;
+
+    if (this.up.y < this.up.offset) {
+      this.up.direction = 1;
+      this.up.speed = 2.25;
+    }
+
+    if (this.up.direction === 1 && this.up.y > 0) {
+      this.up.playing = false;
+    }
+
+    this.y = this.data.y + this.up.y;
   }
 }
