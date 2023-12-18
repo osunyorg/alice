@@ -10,8 +10,11 @@
             margin-top: $spacing1
             margin-bottom: $spacing1
         img
-            max-width: 220px
+            width: 220px
+            max-width: 90%
             margin: 0 auto
             display: block
+            @include media-breakpoint-up(xl)
+                width: 23vw
         .h1
             text-align: left
