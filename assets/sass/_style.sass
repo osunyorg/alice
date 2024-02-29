@@ -14,28 +14,28 @@ a
 .block-content
     i
         display: block
-        font-size: px2rem(35)
-        padding: px2rem(40) 0 
-        line-height: px2rem(40)
+        font-size: pxToRem(35)
+        padding: pxToRem(40) 0 
+        line-height: pxToRem(40)
         position: relative
         &::after,
         &::before
-            font-size: px2rem(70)
-            line-height: px2rem(70)
+            font-size: pxToRem(70)
+            line-height: pxToRem(70)
             display: block
             position: absolute
-            left: px2rem(-8)
+            left: pxToRem(-8)
             color: #666666
         &::after,
             content: "”"
-            bottom: px2rem(-30)
+            bottom: pxToRem(-30)
         &::before
             content: "“"
-            top: px2rem(10)
+            top: pxToRem(10)
 
 header#document-header
     position: relative
-    padding-top: $spacing3
+    padding-top: $spacing-5
     nav
         .container
             // Alice (logo) centered
@@ -52,19 +52,18 @@ header#document-header
         padding-top: 0
         .content
             padding-top: 0
-            h1,
-            hgroup
+            .hero-text
                 // No cols
                 width: 100%
             .lead
                 font-style: italic
                 text-align: center
                 @include media-breakpoint-up(xxl)
-                    width: col(10)
+                    width: columns(10)
                     padding-left: offset(2)
-                    margin-bottom: $spacing4
+                    margin-bottom: $spacing-6
                 @include in-page-with-sidebar
-                    margin-bottom: $spacing4
+                    margin-bottom: $spacing-6
  
 .breadcrumb-nav
     display: none
@@ -72,16 +71,16 @@ header#document-header
 .toc-content
     .toc-title
         display: none
-.page__home
+.page__home.full-width
     @include media-breakpoint-up(desktop)
         .block-organizations
-            margin-top: $spacing4
+            margin-top: $spacing-6
         .block-chapter
             text-align: center
             .chapter
                 justify-content: center
                 .block-title
-                    margin-bottom: $spacing2
+                    margin-bottom: $spacing-4
 .blocks
     .block
         .top
@@ -93,8 +92,8 @@ header#document-header
             + .block-call_to_action
                 margin-top: 0
             .block-content
-                padding-top: $spacing2 !important
-                padding-bottom: $spacing2 !important
+                padding-top: $spacing-4 !important
+                padding-bottom: $spacing-4 !important
             .call_to_action
                 .description
                     a
@@ -102,11 +101,11 @@ header#document-header
                         &:hover
                             text-decoration-color: $color-text
                     p
-                        font-size: px2rem(28)
+                        font-size: pxToRem(28)
                         font-weight: normal
                         margin: 0
                         @include media-breakpoint-down(desktop)
-                            font-size: px2rem(22)
+                            font-size: pxToRem(22)
                 img
                     border-radius: 5px
             &:nth-of-type(even)
@@ -148,4 +147,4 @@ header#document-header
         .nav-legal
             li
                 display: inline
-                padding-right: $spacing1
+                padding-right: $spacing-3
