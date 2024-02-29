@@ -12,3 +12,5 @@ params:
     design_system:
       lightbox: 
         disabled: true
+  debug:
+     productionUrl: "https://www.aliceetlescryptotrolls.org"
