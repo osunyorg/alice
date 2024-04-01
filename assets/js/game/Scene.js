@@ -29,8 +29,6 @@ export default class Scene {
       ...this.trolls,
       this.hero
     ]
-
-    console.log(this.elements)
   }
   doubleMatrix() {
     let matrice = [];
