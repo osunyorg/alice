@@ -19,7 +19,7 @@
       </section>
       <section class="blank"></section>
       <section class="intro">
-        <h2>{{ .Params.summary }}</h2>
+        <h2>{{ .Params.summary | plainify }}</h2>
         {{ with index .Params.contents 0 }}
           {{ partial "PrepareHTML" .data.text }}
         {{ end }}
@@ -31,7 +31,7 @@
           {{ $media := partial "GetMedia" .Params.image.id }}
           <img class="city__illustration" src="{{ $media.url }}">
           <h2>{{ .Title }}</h2>
-          <h3>{{ .Params.summary }}</h3>
+          <h3>{{ .Params.summary | plainify }}</h3>
           {{ range .Params.contents }}
             {{ if eq .template "chapter" }}
               {{ partial "PrepareHTML" .data.text }}
@@ -54,7 +54,7 @@
     {{ with site.GetPage "/pages/trolls" }}
       <section class="trolls">
         <h2>{{ .Title }}</h2>
-        <p>{{ .Params.summary }}</p>
+        <p>{{ .Params.summary | plainify }}</p>
         {{ range $index, $troll := .Params.contents }}
           <div class="troll">
             <div>

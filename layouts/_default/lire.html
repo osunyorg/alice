@@ -33,7 +33,9 @@
           <div class="block block-summary">
             <div class="container">
               <div class="block-content">
-                <p class="h3" role="heading" aria-level="3">{{ .Params.summary }}</p>
+                <div class="h3" role="heading" aria-level="3">
+                  {{ .Params.summary | safeHTML }}
+                </div>
               </div>
             </div>
           </div>
@@ -61,7 +63,9 @@
         <div class="block block-summary">
           <div class="container">
             <div class="block-content">
-              <p class="h3" role="heading" aria-level="3">{{ .Params.summary }}</p>
+              <div class="h3" role="heading" aria-level="3">
+                {{ .Params.summary | safeHTML }}
+              </div>
             </div>
           </div>
         </div>
@@ -76,7 +80,7 @@
           <div class="block block-summary">
             <div class="container">
               <div class="block-content">
-                <p>{{ .Params.summary }}</p>
+                {{ .Params.summary | safeHTML }}
               </div>
             </div>
           </div>
