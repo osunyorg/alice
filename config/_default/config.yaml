@@ -1,6 +1,5 @@
 theme: osuny
-enableRobotsTXT: true
-removePathAccents: true
+_merge: deep
 params:
   plausible: aliceetlescryptotrolls.org
   logo:
