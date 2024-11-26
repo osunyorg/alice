@@ -21,6 +21,7 @@ items:
   target: "/mentions-legales/"
   kind: page
   children: []
+  file: content/fr/pages/mentions-legales/_index.html
 - title: Code source
   target: https://github.com/noesya/alice/
   kind: url
