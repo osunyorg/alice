@@ -12,3 +12,6 @@ params:
         disabled: true
   debug:
      productionUrl: "https://www.aliceetlescryptotrolls.org"
+  home:
+    head:
+      title: site
