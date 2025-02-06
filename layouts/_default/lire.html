@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ $cities := site.GetPage "/pages/villes"}}
-  {{ partial "pages/hero.html" . }}
+  {{ partial "pages/single/hero.html" . }}
 
   <div class="document-content">
     {{- partial "toc/cta" -}}
