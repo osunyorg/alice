@@ -2,6 +2,11 @@
 
 baseURL: https://www.aliceetlescryptotrolls.org
 
+## OSUNY
+osuny:
+  website:
+    id: 7e153490-6230-479f-828c-072156fa7844
+
 ## LANGUAGE
 defaultContentLanguage: fr
 defaultContentLanguageInSubdir: false
