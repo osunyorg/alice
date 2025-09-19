@@ -8,4 +8,4 @@ node_modules
 jsconfig.json
 yarn-error.log
 /static/pagefind
-/backstop_data
+backstop_data
