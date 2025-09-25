@@ -53,7 +53,10 @@
               </div>
             </div>
           </div>
-          {{ partial "contents/list.html" . }}
+          {{ partial "contents/list.html" (dict
+            "context" .
+            "contents" .Params.contents
+          ) }}
         {{ end }}
       {{ end }}
       {{ with site.GetPage "/pages/definitions" }}
@@ -69,7 +72,10 @@
             </div>
           </div>
         </div>
-        {{ partial "contents/list.html" . }}
+        {{ partial "contents/list.html" (dict
+            "context" .
+            "contents" .Params.contents
+          ) }}
       {{ end }}
       {{ with site.GetPage "/pages/trolls" }}
         <section class="trolls">
@@ -85,7 +91,10 @@
             </div>
           </div>
 
-          {{ partial "contents/list.html" . }}
+          {{ partial "contents/list.html" (dict
+              "context" .
+              "contents" .Params.contents
+            ) }}
         </section>
       {{ end }}
     </div>

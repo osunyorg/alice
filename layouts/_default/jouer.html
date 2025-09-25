@@ -53,7 +53,10 @@
                     <div class="content">
                       <h2 class="h1">{{ .Title }}</h2>
                       <h3>{{ .Params.summary | safeHTML }}</h3>
-                      {{ partial "contents/list" . }}
+                      {{ partial "contents/list.html" (dict
+                        "context" .
+                        "contents" .Params.contents
+                      ) }}
                     </div>
                   </div>
                 </li>
