@@ -6,10 +6,9 @@ params:
     header: "/assets/images/alice.png"
   summary:
     position: hero
-  image_sizes:
-    design_system:
-      lightbox: 
-        disabled: true
+  components:
+    lightbox:
+      disabled: true
   debug:
      productionUrl: "https://www.aliceetlescryptotrolls.org"
   home:
