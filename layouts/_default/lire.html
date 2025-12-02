@@ -46,13 +46,13 @@
                   {{ partial "commons/image.html"
                       (dict
                         "image"    .Params.image
-                        "sizes"    site.Params.image_sizes.design_system.hero
+                        "sizes"    site.Params.image_sizes._default.hero
                         "lazy"     true
                       ) }}
                 </figure>
               </div>
             </div>
-          </div>
+          </div>e
           {{ partial "contents/list.html" (dict
             "context" .
             "contents" .Params.contents
