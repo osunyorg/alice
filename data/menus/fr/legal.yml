@@ -2,40 +2,54 @@
 title: Informations légales
 items:
 - title: Jouer
+  slug: jouer
   target: "/jouer/"
   kind: url
   new_tab: false
   children: []
+  descendants_targets: []
 - title: Lire
+  slug: lire
   target: "/lire/"
   kind: url
   new_tab: false
   children: []
+  descendants_targets: []
 - title: Acheter
+  slug: acheter
   target: https://volumique.com/shopv2/produit/alice-et-les-crypto-trolls/
   kind: url
   new_tab: true
   children: []
+  descendants_targets: []
 - title: Imprimer
+  slug: imprimer
   target: "/imprimer/"
   kind: url
   new_tab: false
   children: []
+  descendants_targets: []
 - title: Mentions légales
+  slug: mentions-legales
   target: "/mentions-legales/"
   kind: page
   new_tab: false
   children: []
+  descendants_targets: []
   path: "/pages/mentions-legales"
   file: content/fr/pages/mentions-legales/_index.html
 - title: Code source
+  slug: code-source
   target: https://github.com/noesya/alice/
   kind: url
   new_tab: true
   children: []
+  descendants_targets: []
 - title: License GPL
+  slug: license-gpl
   target: https://github.com/noesya/alice/blob/main/LICENSE
   kind: url
   new_tab: true
   children: []
+  descendants_targets: []
 
