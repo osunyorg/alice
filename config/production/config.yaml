@@ -7,6 +7,11 @@ osuny:
   website:
     id: 7e153490-6230-479f-828c-072156fa7844
 
+## PARAMS
+params:
+  _merge: deep
+  plausible: "aliceetlescryptotrolls.org"
+
 ## LANGUAGE
 defaultContentLanguage: fr
 defaultContentLanguageInSubdir: false
