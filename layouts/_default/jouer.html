@@ -69,7 +69,7 @@
           window.trollDialogs = [
             {{ with site.GetPage "/pages/trolls" }}
               {{ range $index, $troll := .Params.contents }}
-                "{{ partial "PrepareText" $troll.data.text }}",
+                "{{ safeHTML $troll.data.text }}",
               {{ end }}
             {{ end }}
           ];
@@ -125,7 +125,7 @@
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 
     {{- if not hugo.IsProduction -}}
-      {{- partial "footer/debug.html" . -}}
+      {{- partial "debug/debug.html" . -}}
     {{- end -}}
   </body>
 </html>
