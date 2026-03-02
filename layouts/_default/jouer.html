@@ -77,7 +77,7 @@
             {{ $troll_image := "" }}
             {{ with site.GetPage "/pages/trolls" }}
               {{ range $index, $troll := .Params.contents }}
-                {{- $troll_image = partial "GetImageUrl" (dict
+                {{- $troll_image = partial "commons/image/helpers/GetUrl.html" (dict
                   "media" (partial "GetMedia" $troll.data.image.id)
                   "size" "1200"
                 ) -}}
