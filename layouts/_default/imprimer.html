@@ -21,7 +21,7 @@
       <section class="intro">
         <h2>{{ .Params.summary | plainify }}</h2>
         {{ with index .Params.contents 0 }}
-          {{ partial "PrepareHTML" .data.text }}
+          {{ safeHTML .data.text }}
         {{ end }}
       </section>
     {{ end }}
@@ -34,7 +34,7 @@
           <h3>{{ .Params.summary | plainify }}</h3>
           {{ range .Params.contents }}
             {{ if eq .template "chapter" }}
-              {{ partial "PrepareHTML" .data.text }}
+              {{ safeHTML .data.text }}
             {{ end }}
           {{ end }}
         </section>
@@ -46,7 +46,7 @@
         {{ range .Params.contents }}
           <div class="definition">
             <h3>{{ .title }}</h3>
-            {{ partial "PrepareHTML" .data.text }}
+            {{ safeHTML .data.text }}
           </div>
         {{ end }}
       </section>
@@ -58,7 +58,7 @@
         {{ range $index, $troll := .Params.contents }}
           <div class="troll">
             <div>
-              {{ partial "PrepareHTML" $troll.data.text }}
+              {{ safeHTML $troll.data.text }}
               {{ with $troll.data.image.id }}
                 {{ $media := partial "GetMedia" . }}
                 <img src="{{ $media.url }}">
@@ -72,7 +72,7 @@
       {{ with site.GetPage "/" }}
         {{ range .Params.contents }}
           {{ if eq .template "chapter" }}
-            {{ partial "PrepareHTML" .data.text }}
+            {{ safeHTML .data.text }}
           {{ end }}
         {{ end }}
       {{ end }}
