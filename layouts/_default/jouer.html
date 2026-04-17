@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" fetchpriority="high" as="image" href="/assets/images/jouer/bitcoin-plat.webp" type="image/webp">
+    {{ partial "head/preconnect.html" . }}
+    {{ partial "head/init.html" . }}
     {{ partial "head/css.html" }}
-    {{ partial "head/seo.html" . }}
+    {{ partial "head/core.html" . }}
     {{ partial "head/favicons.html" . }}
     {{ partial "head/rss.html" . }}
     {{ partial "head/script.html" . }}
-    {{ partial "head/extras.html" . }}
   </head>
   <body class="{{ partial "body/helpers/GetBodyclass" . }}">
       <div class="screen game" id="game">
