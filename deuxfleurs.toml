@@ -15,18 +15,18 @@ for = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp"]
 Cache-Control = "max-age=31536000, no-transform, public"
 
 [[redirects]]
-from = "/villes/bankochain-1/index.html"
+from = "/villes/bankochain-1/"
 to = "/villes/cimetiere-du-nft/"
 
 [[redirects]]
-from = "/villes/kryptogarden/index.html"
+from = "/villes/kryptogarden/"
 to = "/villes/kryptogarten/"
 
 [[redirects]]
-from = "/lire/index.html"
+from = "/lire/"
 to = "/lire-old/"
 
 [[redirects]]
-from = "/en-une-page/index.html"
+from = "/en-une-page/"
 to = "/lire-old/"
 
