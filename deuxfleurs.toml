@@ -23,10 +23,6 @@ from = "/villes/kryptogarden/index.html"
 to = "/villes/kryptogarten/"
 
 [[redirects]]
-from = "/lire/index.html"
-to = "/lire-old/"
-
-[[redirects]]
 from = "/en-une-page/index.html"
 to = "/lire-old/"
 
