@@ -35,7 +35,7 @@
             </ul>
           {{ end }}
         </div>
-    
+
         <div class="cities">
           <ul>
             {{ with site.GetPage "/pages/villes" }}
@@ -66,27 +66,21 @@
           </ul>
         </div>
 
-        <script>
-          window.trollDialogs = [
-            {{ with site.GetPage "/pages/trolls" }}
-              {{ range $index, $troll := .Params.contents }}
-                "{{ safeHTML $troll.data.text }}",
-              {{ end }}
-            {{ end }}
-          ];
-          window.trollImages = [
-            {{ $troll_image := "" }}
-            {{ with site.GetPage "/pages/trolls" }}
-              {{ range $index, $troll := .Params.contents }}
-                {{- $troll_image = partial "commons/image/helpers/GetUrl.html" (dict
-                  "media" (partial "GetMedia" $troll.data.image.id)
-                  "size" "1200"
-                ) -}}
-                "{{ $troll_image }}",
-              {{ end }}
-            {{ end }}
-          ];
-        </script>
+        {{- $troll_dialogs := slice -}}
+        {{- $troll_images := slice -}}
+        {{- $troll_image := "" -}}
+        {{- with site.GetPage "/pages/trolls" -}}
+          {{- range $index, $troll := .Params.contents -}}
+            {{- $troll_dialogs = $troll_dialogs | append $troll.data.text -}}
+            {{- $troll_image = partial "commons/image/helpers/GetUrl.html" (dict
+              "media" (partial "GetMedia" $troll.data.image.id)
+              "size" "1200"
+            ) -}}
+            {{- $troll_images = $troll_images | append $troll_image -}}
+          {{ end }}
+        {{ end }}
+        <div  data-troll-dialogs="{{- $troll_dialogs | jsonify -}}"
+              data-troll-images="{{- $troll_images | jsonify -}}"></div>
 
         <div class="popin popin--end" id="game-end">
           <h3>Bravo !</h3>
@@ -99,7 +93,7 @@
           <a href="{{ $troll_image }}" target="_blank" rel="noopener" id="gift-url" download="alice-et-les-cryptotrolls.png" class="link-btn icon">Télécharger</a>
           <button class="close" title="Fermer"></button>
         </div>
-    
+
         <div class="game-ui">
           <div class="coins">
             <div class="coin"></div>

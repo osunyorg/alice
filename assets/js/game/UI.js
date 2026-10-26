@@ -12,6 +12,8 @@ class UI {
     this.coinsContainer = document.querySelector('.coins');
     this.coinsPicked = 0;
     this.coinsTotal = document.querySelectorAll('.definitions .definition').length;
+    this.imagesElement = document.querySelector("[data-troll-images]");
+    this.images = JSON.parse(this.imagesElement.dataset.trollImages);
     this.update();
   }
   closeAllPopins(excepted) {
@@ -36,7 +38,7 @@ class UI {
     this.closePopin(id)
     this.update();
     if (this.coinsTotal === this.coinsPicked) {
-      const url = window.trollImages[Math.floor(Math.random() * window.trollImages.length)];
+      const url = this.images[Math.floor(Math.random() * this.images.length)];
       document.getElementById('gift-url').href = url;
       this.openPopin('game-end');
     }

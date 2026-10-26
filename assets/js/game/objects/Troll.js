@@ -35,7 +35,8 @@ export default class Troll extends Character {
     this.voice = data.voice
 
     this.isSpeaking = false;
-    this.slangs = window.trollDialogs;
+    this.slangsElement = document.querySelector("[data-troll-dialogs]");
+    this.slangs = JSON.parse(this.slangsElement.dataset.trollDialogs);
     this.slang = "";
     this.slangMilliseconds = 5000;
 
